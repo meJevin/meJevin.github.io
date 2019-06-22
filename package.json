@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Portfolio website by M. Naifield",
   "main": "index.js",
-  "homepage": "https://mejevin.github.io/meJevin.github.io",
+  "homepage": "https://mejevin.github.io/",
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
     "deploy": "gh-pages -d dist"
