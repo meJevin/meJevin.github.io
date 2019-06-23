@@ -63,6 +63,7 @@
       border-radius: 50%;
       border: solid 3px #52c8ff; }
   .menu .nav-item {
+    margin: 40px 0px;
     transform: translate3d(600px, 0, 0);
     transition: all 0.5s ease-out; }
     .menu .nav-item.show {
@@ -105,16 +106,26 @@ body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
-  body#bg-img {
-    background: url(../img/background.jpg);
-    background-attachment: fixed;
-    background-size: cover; }
   body#bg-img-about {
     background: url(../img/background_about.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: 50% 50%; }
-  body:after {
+  body#bg-img#bg-img {
+    background: url(../img/background.jpg);
+    background-attachment: fixed;
+    background-size: cover; }
+  body#bg-img#bg-img-about {
+    background: url(../img/background_about.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 50%; }
+  body#bg-img#bg-img-about-showing {
+    background: url(../img/background_about.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 50%; }
+  body#bg-img:after {
     content: "";
     position: fixed;
     top: 0;
@@ -123,6 +134,17 @@ body {
     height: 100%;
     background: rgba(54, 62, 65, 0.9);
     z-index: -1; }
+  body .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(54, 62, 65, 0.9);
+    z-index: -1;
+    transition: all 0.5s ease-out; }
+    body .overlay.hide {
+      background: rgba(54, 62, 65, 0); }
 
 h1,
 h2,
@@ -147,14 +169,18 @@ a {
 header {
   position: fixed;
   z-index: 2;
-  width: 100%; }
+  width: 100%;
+  transition: all 0.5s ease-out; }
+  header.hide {
+    opacity: 0; }
 
 .text-secondary {
   color: #52c8ff; }
 
 main {
   padding: 4rem;
-  min-height: calc(100vh - 60px); }
+  min-height: calc(100vh - 60px);
+  transition: all 0.5s ease-out; }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -166,6 +192,29 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+  main.hide {
+    opacity: 0; }
+
+span.highlight {
+  color: #52c8ff;
+  font-weight: 600; }
+
+span.highlight-wow {
+  background: #52c8ff;
+  color: black;
+  font-weight: 600;
+  font-size: 1.35rem;
+  padding: 2px 5px; }
+
+span.hover-for-bg {
+  font-weight: 400;
+  background: #4d595d;
+  padding: 2px 5px;
+  cursor: zoom-in; }
+  span.hover-for-bg.clone {
+    position: absolute;
+    top: 0;
+    left: 0; }
 
 .about-info {
   display: grid;
@@ -182,7 +231,10 @@ main {
     width: 350px;
     height: 350px; }
   .about-info .bio {
-    grid-area: bio; }
+    grid-area: bio;
+    font-weight: 300; }
+    .about-info .bio h2 {
+      font-size: 3rem; }
   .about-info .job-1 {
     grid-area: job1; }
   .about-info .job-2 {
@@ -225,10 +277,10 @@ main {
 
 #main-footer {
   text-align: center;
-  padding: 1rem;
-  background: #23292b;
   color: white;
-  height: 60px; }
+  height: 25px;
+  font-weight: lighter;
+  font-size: 13px; }
 
 @media screen and (min-width: 1171px) {
   .projects {

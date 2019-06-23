@@ -32,6 +32,13 @@ $background-opacity: 0.9;
       background-position: 50% 50%;
     }
 
+    &#bg-img-about-showing {
+      background: $about-image;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: 50% 50%;
+    }
+
     &:after {
       content: "";
       position: fixed;
