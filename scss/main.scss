@@ -105,12 +105,10 @@ main {
     }
   }
 
-  @include easeOut();
+  @include easeOut;
 
   &.hide {
     opacity: 0;
-
-    @include easeOut();
   }
 }
 
@@ -225,7 +223,7 @@ span {
         &:hover {
           background-color: darken($secondary-color, 0.5);
 
-          @include easeOut();
+          @include easeOut;
         }
       }
       span {
@@ -251,7 +249,7 @@ span {
       opacity: 0.5;
       border-color: $secondary-color;
 
-      @include easeOut();
+      @include easeOut;
     }
   }
 }
