@@ -53,7 +53,7 @@ h3 {
 
   &.sm-heading {
     margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
+    padding: 0.2rem 0rem;
     background: rgba(lighten($primary-color, 2), 0.5);
   }
 }
@@ -143,9 +143,9 @@ span {
   display: grid;
   grid-gap: 30px;
   grid-template-areas:
-    "bioimage bio bio"
-    "job1 job2 job3";
-  grid-template-columns: repeat(3, 1fr);
+    "bioimage bioimage bio bio"
+    "job1 job2 bio bio";
+  grid-template-columns: repeat(4, 1fr);
 
   .bio-image {
     background: $portrait-image-2;
@@ -167,6 +167,31 @@ span {
     h2 {
       font-size: 3rem;
     }
+
+    .bio-info {
+      height: 100%;
+      display: grid;
+      grid-template-rows: repeat(auto-fit, 1fr);
+
+      .bio-1 {
+        grid-area: bio-1;
+      }
+      .bio-2 {
+        grid-area: bio-2;
+      }
+      .bio-3 {
+        grid-area: bio-3;
+      }
+      .bio-4 {
+        grid-area: bio-4;
+      }
+
+      grid-template-areas:
+        "bio-1"
+        "bio-2"
+        "bio-3"
+        "bio-4";
+    }
   }
 
   .job-1 {
@@ -177,14 +202,19 @@ span {
     grid-area: job2;
   }
 
-  .job-3 {
-    grid-area: job3;
-  }
-
   .job {
     background: lighten($primary-color, 5);
-    padding: 0.5rem;
+    padding: 1rem;
     border-bottom: $secondary-color 5px solid;
+
+    h3 {
+      text-align: left;
+      span {
+        color: $secondary-color;
+        font-weight: 300;
+        float: right;
+      }
+    }
   }
 }
 
@@ -197,7 +227,6 @@ span {
 
   img {
     width: 100%;
-    border: 3px white solid;
 
     &:hover {
       opacity: 0.5;
