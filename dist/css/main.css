@@ -234,6 +234,7 @@ span.hover-for-bg {
     grid-area: bio;
     font-weight: 300; }
     .about-info .bio h2 {
+      line-height: 1;
       font-size: 3rem; }
     .about-info .bio .bio-info {
       height: 100%;
