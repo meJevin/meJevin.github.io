@@ -131,7 +131,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(54, 62, 65, 0.9);
+    background: rgba(54, 62, 65, 0.95);
     z-index: -1; }
   body .overlay {
     position: fixed;
@@ -139,7 +139,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(54, 62, 65, 0.9);
+    background: rgba(54, 62, 65, 0.95);
     z-index: -1;
     transition: all 0.5s ease-out; }
     body .overlay.hide {
@@ -193,7 +193,8 @@ main {
     main#home h1 {
       margin-top: 20vh; }
   main.hide {
-    opacity: 0; }
+    opacity: 0;
+    transition: all 0.5s ease-out; }
 
 span.highlight {
   color: #52c8ff;
@@ -260,9 +261,15 @@ span.hover-for-bg {
     .about-info .job h6 {
       font-size: 0.8rem;
       padding: 0;
-      margin: 15px 0px; }
+      margin: 25px 0px 15px 0px; }
     .about-info .job h3 {
       text-align: left; }
+      .about-info .job h3 a {
+        padding: 0.5rem;
+        background-color: #353d40; }
+        .about-info .job h3 a:hover {
+          background-color: #4fc7ff;
+          transition: all 0.5s ease-out; }
       .about-info .job h3 span {
         color: #52c8ff;
         font-weight: 300;

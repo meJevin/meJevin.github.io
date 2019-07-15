@@ -11,7 +11,7 @@ $portrait-image-small: url(../img/portrait_small.jpg);
 $portrait-image-2: url(../img/portrait_2.jpg);
 $portrait-image-small-2: url(../img/portrait_small_2.jpg);
 
-$background-opacity: 0.9;
+$background-opacity: 0.95;
 
 @mixin easeOut {
   transition: all 0.5s ease-out;
