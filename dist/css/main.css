@@ -63,7 +63,7 @@
       border-radius: 50%;
       border: solid 3px #52c8ff; }
   .menu .nav-item {
-    margin: 40px 0px;
+    margin: 2rem 0px;
     transform: translate3d(600px, 0, 0);
     transition: all 0.5s ease-out; }
     .menu .nav-item.show {
@@ -76,8 +76,7 @@
     position: relative;
     font-size: 2rem;
     text-transform: uppercase;
-    padding: 1rem 0;
-    font-weight: 300;
+    font-weight: 500;
     color: white;
     text-decoration: none;
     transition: all 0.5s ease-out; }
@@ -104,7 +103,7 @@ body {
   color: white;
   height: 100%;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Roboto";
   line-height: 1.5; }
   body#bg-img-about {
     background: url(../img/background_about.jpg);
@@ -150,7 +149,8 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-weight: 300; }
+  font-weight: 300;
+  padding: 0; }
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
@@ -178,7 +178,7 @@ header {
   color: #52c8ff; }
 
 main {
-  padding: 4rem;
+  padding: 5rem;
   min-height: calc(100vh - 60px);
   transition: all 0.5s ease-out; }
   main .icons {
@@ -256,6 +256,10 @@ span.hover-for-bg {
     background: #424b4f;
     padding: 1rem;
     border-bottom: #52c8ff 5px solid; }
+    .about-info .job h6 {
+      font-size: 0.8rem;
+      padding: 0;
+      margin: 15px 0px; }
     .about-info .job h3 {
       text-align: left; }
       .about-info .job h3 span {
@@ -337,9 +341,11 @@ span.hover-for-bg {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
-  main .lg-heading {
-    font-size: 5rem;
-    margin-bottom: 4rem; }
+  main {
+    padding: 4rem 1.5rem; }
+    main .lg-heading {
+      font-size: 4rem;
+      margin-bottom: 4rem; }
   main#home h1 {
     margin-top: 10vh; }
   .about-info .bio-image {
