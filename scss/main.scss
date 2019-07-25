@@ -1,5 +1,6 @@
 @import "config";
 @import "menu";
+@import "work";
 
 * {
   box-sizing: border-box;
@@ -231,25 +232,6 @@ span {
         font-weight: 300;
         float: right;
       }
-    }
-  }
-}
-
-.projects {
-  display: grid;
-
-  grid-gap: 1rem;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  img {
-    width: 100%;
-
-    &:hover {
-      opacity: 0.5;
-      border-color: $secondary-color;
-
-      @include easeOut;
     }
   }
 }

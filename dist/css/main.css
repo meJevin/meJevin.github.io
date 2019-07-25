@@ -4,13 +4,13 @@
   right: 35px;
   top: 35px;
   cursor: pointer;
-  transition: all 0.5s ease-out; }
+  transition: all 0.65s ease-in-out; }
   .menu-btn .btn-line {
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
     background: white;
-    transition: all 0.5s ease-out; }
+    transition: all 0.65s ease-in-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
     .menu-btn.close .btn-line:nth-child(1) {
@@ -43,7 +43,7 @@
     list-style: none;
     transform: translate3d(100%, 0, 0);
     opacity: 0;
-    transition: all 0.5s ease-out; }
+    transition: all 0.65s ease-in-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0);
       opacity: 1; }
@@ -51,7 +51,7 @@
     background: rgba(54, 62, 65, 0.9);
     transform: translate3d(-100%, 0, 0);
     opacity: 0;
-    transition: all 0.5s ease-out; }
+    transition: all 0.65s ease-in-out; }
     .menu-branding.show {
       transform: translate3d(0, 0, 0);
       opacity: 1; }
@@ -65,7 +65,7 @@
   .menu .nav-item {
     margin: 2rem 0px;
     transform: translate3d(600px, 0, 0);
-    transition: all 0.5s ease-out; }
+    transition: all 0.65s ease-in-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0);
       opacity: 1; }
@@ -79,7 +79,7 @@
     font-weight: 500;
     color: white;
     text-decoration: none;
-    transition: all 0.5s ease-out; }
+    transition: all 0.65s ease-in-out; }
     .menu .nav-link:hover {
       color: #52c8ff; }
 
@@ -94,6 +94,29 @@
 
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
+
+.projects .project-group .project-group-expand-btn {
+  width: 100%;
+  height: 100px;
+  background-color: #363e41;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px; }
+  .projects .project-group .project-group-expand-btn:hover {
+    background-color: #1f2325; }
+
+.projects .project-group .project-group-content {
+  transition: all 0.65s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  background-color: rgba(31, 35, 37, 0.75);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .projects .project-group .project-group-content .item {
+    height: 100px;
+    background-color: #52c8ff;
+    margin: 1rem 1rem; }
 
 * {
   box-sizing: border-box; }
@@ -141,7 +164,7 @@ body {
     height: 100%;
     background: rgba(54, 62, 65, 0.95);
     z-index: -1;
-    transition: all 0.5s ease-out; }
+    transition: all 0.65s ease-in-out; }
     body .overlay.hide {
       background: rgba(54, 62, 65, 0); }
 
@@ -170,7 +193,7 @@ header {
   position: fixed;
   z-index: 2;
   width: 100%;
-  transition: all 0.5s ease-out; }
+  transition: all 0.65s ease-in-out; }
   header.hide {
     opacity: 0; }
 
@@ -180,14 +203,14 @@ header {
 main {
   padding: 5rem;
   min-height: calc(100vh - 60px);
-  transition: all 0.5s ease-out; }
+  transition: all 0.65s ease-in-out; }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
         color: #52c8ff;
-        transition: all 0.5s ease-out; }
+        transition: all 0.65s ease-in-out; }
   main#home {
     overflow: hidden; }
     main#home h1 {
@@ -268,22 +291,11 @@ span.hover-for-bg {
         background-color: #353d40; }
         .about-info .job h3 a:hover {
           background-color: #4fc7ff;
-          transition: all 0.5s ease-out; }
+          transition: all 0.65s ease-in-out; }
       .about-info .job h3 span {
         color: #52c8ff;
         font-weight: 300;
         float: right; }
-
-.projects {
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(3, 1fr); }
-  .projects img {
-    width: 100%; }
-    .projects img:hover {
-      opacity: 0.5;
-      border-color: #52c8ff;
-      transition: all 0.5s ease-out; }
 
 .btn, .btn-dark, .btn-light {
   display: block;
@@ -314,16 +326,17 @@ span.hover-for-bg {
     grid-template-columns: repeat(4, 1fr); } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
-  .projects {
-    grid-template-columns: repeat(3, 1fr); }
   .about-info {
     grid-template-areas: "bioimage bio bio bio" "job1 bio bio bio" "job2 bio bio bio";
-    grid-template-columns: 4fr; } }
+    grid-template-columns: 4fr; }
+  main {
+    padding: 4rem 3rem; } }
 
 @media screen and (max-width: 768px) {
   main {
     align-items: center;
-    text-align: center; }
+    text-align: center;
+    padding: 4rem 2rem; }
     main .lg-heading {
       line-height: 1;
       margin-bottom: 1rem; }
@@ -343,9 +356,7 @@ span.hover-for-bg {
       background-size: cover; }
   .about-info {
     grid-template-areas: "bioimage" "bio" "job1" "job2";
-    grid-template-columns: 1fr; }
-  .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 500px) {
   main {
@@ -357,6 +368,4 @@ span.hover-for-bg {
     margin-top: 10vh; }
   .about-info .bio-image {
     width: 250px;
-    height: 250px; }
-  .projects {
-    grid-template-columns: repeat(1, 1fr); } }
+    height: 250px; } }

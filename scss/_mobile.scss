@@ -7,10 +7,6 @@
 
 // Desktops & Laptops
 @include mediaLg {
-  .projects {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .about-info {
     grid-template-areas:
       "bioimage bio bio bio"
@@ -18,6 +14,10 @@
       "job2 bio bio bio";
 
     grid-template-columns: 4fr;
+  }
+
+  main {
+    padding: 4rem 3rem;
   }
 }
 
@@ -31,6 +31,8 @@
       line-height: 1;
       margin-bottom: 1rem;
     }
+    
+    padding: 4rem 2rem;
   }
 
   ul.menu-nav,
@@ -67,9 +69,6 @@
     grid-template-columns: 1fr;
   }
 
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 // Smartphones
@@ -92,7 +91,4 @@
     height: 250px;
   }
 
-  .projects {
-    grid-template-columns: repeat(1, 1fr);
-  }
 }
