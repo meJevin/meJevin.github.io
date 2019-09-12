@@ -95,28 +95,92 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
-.projects .project-group .project-group-expand-btn {
-  width: 100%;
-  height: 100px;
-  background-color: #363e41;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px; }
-  .projects .project-group .project-group-expand-btn:hover {
-    background-color: #1f2325; }
-
-.projects .project-group .project-group-content {
-  transition: all 0.65s ease-in-out;
-  max-height: 0;
-  overflow: hidden;
-  background-color: rgba(31, 35, 37, 0.75);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-  .projects .project-group .project-group-content .item {
-    height: 100px;
-    background-color: #52c8ff;
-    margin: 1rem 1rem; }
+.projects {
+  transition: all 0.65s ease-in-out; }
+  .projects .project-group {
+    transition: all 0.65s ease-in-out; }
+    .projects .project-group .project-group-expand-btn {
+      transition: all 0.65s ease-in-out;
+      width: 100%;
+      height: 100px;
+      background-color: rgba(54, 62, 65, 0.75);
+      border: none;
+      text-align: left;
+      outline: none; }
+      .projects .project-group .project-group-expand-btn:hover {
+        background-color: rgba(31, 35, 37, 0.95); }
+      .projects .project-group .project-group-expand-btn h3 {
+        display: inline-block;
+        font-size: 3rem;
+        color: white;
+        font-family: "Roboto";
+        font-weight: 200;
+        background-color: rgba(82, 200, 255, 0.5);
+        padding: 0.2rem 0.2rem; }
+    .projects .project-group .project-group-content {
+      position: relative;
+      transition: all 0.65s ease-in-out;
+      max-height: 0;
+      overflow: hidden;
+      background-color: rgba(31, 35, 37, 0.5);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+      .projects .project-group .project-group-content .info-icon {
+        transition: all 0.65s ease-in-out;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0.5rem;
+        margin: 0.2rem 0.5rem;
+        color: white;
+        background-color: black; }
+        .projects .project-group .project-group-content .info-icon:hover {
+          background-color: rgba(31, 184, 255, 0.9);
+          color: rgba(255, 255, 255, 0.9);
+          visibility: visible; }
+      .projects .project-group .project-group-content .item-description {
+        transition: all 0.65s ease-in-out;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        visibility: hidden;
+        background-color: rgba(54, 62, 65, 0);
+        color: rgba(255, 255, 255, 0); }
+        .projects .project-group .project-group-content .item-description h3 {
+          margin: 1rem;
+          font-size: 0.95rem; }
+        .projects .project-group .project-group-content .item-description.show {
+          background-color: rgba(31, 35, 37, 0.95);
+          color: rgba(255, 255, 255, 0.9);
+          visibility: visible; }
+      .projects .project-group .project-group-content .item {
+        transition: all 0.65s ease-in-out;
+        display: inline-block;
+        position: relative;
+        margin: 1rem auto;
+        text-align: center;
+        height: 300px;
+        width: 200px;
+        background-color: #363e41; }
+        .projects .project-group .project-group-content .item img {
+          transition: all 0.65s ease-in-out;
+          width: 100%; }
+        .projects .project-group .project-group-content .item .btn-dark {
+          transition: all 0.65s ease-in-out;
+          padding: 0.5rem 0.5rem; }
+      .projects .project-group .project-group-content .item-tag {
+        display: inline-block;
+        padding: 0.2rem 0.2rem;
+        margin: 0.3rem 0.2rem;
+        color: white;
+        background-color: rgba(82, 200, 255, 0.5); }
+        .projects .project-group .project-group-content .item-tag h3 {
+          font-size: 0.8rem; }
 
 * {
   box-sizing: border-box; }
@@ -162,7 +226,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(54, 62, 65, 0.95);
+    background: rgba(54, 62, 65, 0.85);
     z-index: -1;
     transition: all 0.65s ease-in-out; }
     body .overlay.hide {
@@ -187,7 +251,8 @@ h3 {
 
 a {
   color: white;
-  text-decoration: none; }
+  text-decoration: none;
+  font-family: "Roboto"; }
 
 header {
   position: fixed;

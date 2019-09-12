@@ -1,45 +1,144 @@
+$background-opacity: 0.95;
+
 .projects {
-    .project-group {
-        
-        .project-group-expand-btn {
-            
-            &:hover {
-                background-color: darken($primary-color, 10);
-            }
+  @include easeOut;
 
-            width: 100%;
-            height: 100px;
-            background-color: $primary-color;
+  .project-group {
+    @include easeOut;
 
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
+    .project-group-expand-btn {
+      @include easeOut;
 
-            &.expanded {
-            }
-        }
+      &:hover {
+        background-color: rgba(darken($primary-color, 10), 0.95);
+      }
 
-        .project-group-content {
-            
-            @include easeOut;
+      width: 100%;
+      height: 100px;
+      background-color: rgba($primary-color, 0.75);
 
-            max-height: 0;
-            overflow: hidden;
-            background-color: rgba(darken($primary-color, 10), 0.75);
+      border: none;
+      text-align: left;
+      outline: none;
 
-            .item {
-                height: 100px;
-                background-color: $secondary-color;
-                margin: 1rem 1rem;
-            }
+      h3 {
+        display: inline-block;
+        font-size: 3rem;
+        color: white;
+        font-family: "Roboto";
+        font-weight: 200;
+        background-color: rgba($secondary-color, 0.5);
+        padding: 0.2rem 0.2rem;
+      }
 
-            &.show {
-            }
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
+      &.expanded {
+      }
     }
+
+    .project-group-content {
+      position: relative;
+
+      @include easeOut;
+
+      max-height: 0;
+      overflow: hidden;
+      background-color: rgba(darken($primary-color, 10), 0.5);
+
+      .info-icon {
+        @include easeOut;
+
+        position: absolute;
+
+        top: 0;
+        right: 0;
+
+        padding: 0.5rem;
+        margin: 0.2rem 0.5rem;
+
+        color: white;
+        background-color: black;
+
+        &:hover {
+          background-color: rgba(darken($secondary-color, 10), 0.9);
+          color: rgba(white, 0.9);
+          visibility: visible;
+        }
+      }
+
+      .item-description {
+        @include easeOut;
+
+        position: absolute;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        visibility: hidden;
+
+        background-color: rgba($primary-color, 0);
+        color: rgba(white, 0);
+
+        h3 {
+          margin: 1rem;
+          font-size: 0.95rem;
+        }
+
+        &.show {
+          background-color: rgba(darken($primary-color, 10), 0.95);
+          color: rgba(white, 0.9);
+          visibility: visible;
+        }
+      }
+
+      .item {
+        @include easeOut;
+
+        display: inline-block;
+        position: relative;
+
+        margin: 1rem auto;
+
+        text-align: center;
+
+        height: 300px;
+        width: 200px;
+        background-color: $primary-color;
+
+        img {
+          @include easeOut;
+          width: 100%;
+        }
+
+        .btn-dark {
+          @include easeOut;
+          padding: 0.5rem 0.5rem;
+        }
+      }
+
+      .item-tag {
+        h3 {
+          font-size: 0.8rem;
+        }
+        display: inline-block;
+
+        padding: 0.2rem 0.2rem;
+        margin: 0.3rem 0.2rem;
+        color: white;
+        background-color: rgba($secondary-color, 0.5);
+      }
+
+      &.show {
+      }
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
 }
