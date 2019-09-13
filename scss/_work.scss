@@ -18,17 +18,20 @@ $background-opacity: 0.95;
       background-color: rgba($primary-color, 0.75);
 
       border: none;
-      text-align: left;
+
+      border-bottom-style: solid;
+      border-bottom-color: $secondary-color;
+      border-bottom-width: 1px;
       outline: none;
 
       h3 {
         display: inline-block;
         font-size: 3rem;
         color: white;
-        font-family: "Roboto";
-        font-weight: 200;
+        font-family: "Arial";
+        font-weight: 300;
         background-color: rgba($secondary-color, 0.5);
-        padding: 0.2rem 0.2rem;
+        padding: 0.35rem;
       }
 
       &.expanded {
@@ -85,8 +88,8 @@ $background-opacity: 0.95;
         color: rgba(white, 0);
 
         h3 {
-          margin: 1rem;
-          font-size: 0.95rem;
+          margin: 1.5rem;
+          font-size: 0.9rem;
         }
 
         &.show {
@@ -101,8 +104,6 @@ $background-opacity: 0.95;
 
         display: inline-block;
         position: relative;
-
-        margin: 1rem auto;
 
         text-align: center;
 
@@ -143,7 +144,6 @@ $background-opacity: 0.95;
 
       display: grid;
 
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
   }
 }

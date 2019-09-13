@@ -105,7 +105,9 @@
       height: 100px;
       background-color: rgba(54, 62, 65, 0.75);
       border: none;
-      text-align: left;
+      border-bottom-style: solid;
+      border-bottom-color: #52c8ff;
+      border-bottom-width: 1px;
       outline: none; }
       .projects .project-group .project-group-expand-btn:hover {
         background-color: rgba(31, 35, 37, 0.95); }
@@ -113,18 +115,17 @@
         display: inline-block;
         font-size: 3rem;
         color: white;
-        font-family: "Roboto";
-        font-weight: 200;
+        font-family: "Arial";
+        font-weight: 300;
         background-color: rgba(82, 200, 255, 0.5);
-        padding: 0.2rem 0.2rem; }
+        padding: 0.35rem; }
     .projects .project-group .project-group-content {
       position: relative;
       transition: all 0.65s ease-in-out;
       max-height: 0;
       overflow: hidden;
       background-color: rgba(31, 35, 37, 0.5);
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+      display: grid; }
       .projects .project-group .project-group-content .info-icon {
         transition: all 0.65s ease-in-out;
         position: absolute;
@@ -152,8 +153,8 @@
         background-color: rgba(54, 62, 65, 0);
         color: rgba(255, 255, 255, 0); }
         .projects .project-group .project-group-content .item-description h3 {
-          margin: 1rem;
-          font-size: 0.95rem; }
+          margin: 1.5rem;
+          font-size: 0.9rem; }
         .projects .project-group .project-group-content .item-description.show {
           background-color: rgba(31, 35, 37, 0.95);
           color: rgba(255, 255, 255, 0.9);
@@ -162,7 +163,6 @@
         transition: all 0.65s ease-in-out;
         display: inline-block;
         position: relative;
-        margin: 1rem auto;
         text-align: center;
         height: 300px;
         width: 200px;
@@ -391,14 +391,28 @@ span.hover-for-bg {
 
 @media screen and (min-width: 1171px) {
   .projects {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(4, 1fr); }
+  .project-group-expand-btn {
+    text-align: left; }
+  .project-group-content {
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-column-gap: 3rem; }
+    .project-group-content .item {
+      margin: 1rem 1rem; } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .about-info {
     grid-template-areas: "bioimage bio bio bio" "job1 bio bio bio" "job2 bio bio bio";
     grid-template-columns: 4fr; }
   main {
-    padding: 4rem 3rem; } }
+    padding: 4rem 3rem; }
+  .project-group-expand-btn {
+    text-align: left; }
+  .project-group-content {
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-column-gap: 3rem; }
+    .project-group-content .item {
+      margin: 1rem 1rem; } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -408,6 +422,14 @@ span.hover-for-bg {
     main .lg-heading {
       line-height: 1;
       margin-bottom: 1rem; }
+  .project-group-expand-btn {
+    text-align: center; }
+  .project-group-content {
+    padding: 0rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 2rem; }
+    .project-group-content .item {
+      margin: 1rem auto; }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -428,7 +450,7 @@ span.hover-for-bg {
 
 @media screen and (max-width: 500px) {
   main {
-    padding: 4rem 1.5rem; }
+    padding: 4.5rem 1.5rem; }
     main .lg-heading {
       font-size: 4rem;
       margin-bottom: 4rem; }
@@ -436,4 +458,6 @@ span.hover-for-bg {
     margin-top: 10vh; }
   .about-info .bio-image {
     width: 250px;
-    height: 250px; } }
+    height: 250px; }
+  .menu-nav {
+    padding-bottom: 2.5rem; } }

@@ -3,6 +3,18 @@
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
+  
+  .project-group-expand-btn {
+    text-align: left;
+  }
+  
+  .project-group-content {
+    .item {
+      margin: 1rem 1rem;
+    }
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-column-gap: 3rem;
+  }
 }
 
 // Desktops & Laptops
@@ -19,6 +31,19 @@
   main {
     padding: 4rem 3rem;
   }
+
+  .project-group-expand-btn {
+    text-align: left;
+  }
+
+  .project-group-content {
+    .item {
+      margin: 1rem 1rem;
+    }
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-column-gap: 3rem;
+  }
+
 }
 
 // Tables & Small Laptops
@@ -33,6 +58,19 @@
     }
     
     padding: 4rem 2rem;
+  }
+
+  .project-group-expand-btn {
+    text-align: center;
+  }
+
+  .project-group-content {
+    padding: 0rem 2rem;
+    .item {
+      margin: 1rem auto;
+    }
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 2rem;
   }
 
   ul.menu-nav,
@@ -79,7 +117,7 @@
       margin-bottom: 4rem;
     }
 
-    padding: 4rem 1.5rem;
+    padding: 4.5rem 1.5rem;
   }
 
   main#home h1 {
@@ -89,6 +127,10 @@
   .about-info .bio-image {
     width: 250px;
     height: 250px;
+  }
+
+  .menu-nav {
+    padding-bottom: 2.5rem;
   }
 
 }
