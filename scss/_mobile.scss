@@ -3,16 +3,16 @@
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
-  
+
   .project-group-expand-btn {
     text-align: left;
   }
-  
+
   .project-group-content {
     .item {
       margin: 1rem 1rem;
     }
-    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-columns: repeat(auto-fit, $item-width);
     grid-column-gap: 3rem;
   }
 }
@@ -40,10 +40,9 @@
     .item {
       margin: 1rem 1rem;
     }
-    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-columns: repeat(auto-fit, $item-width);
     grid-column-gap: 3rem;
   }
-
 }
 
 // Tables & Small Laptops
@@ -56,7 +55,7 @@
       line-height: 1;
       margin-bottom: 1rem;
     }
-    
+
     padding: 4rem 2rem;
   }
 
@@ -69,7 +68,7 @@
     .item {
       margin: 1rem auto;
     }
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax($item-width, 1fr));
     grid-column-gap: 2rem;
   }
 
@@ -106,7 +105,6 @@
 
     grid-template-columns: 1fr;
   }
-
 }
 
 // Smartphones
@@ -132,5 +130,4 @@
   .menu-nav {
     padding-bottom: 2.5rem;
   }
-
 }

@@ -1,5 +1,7 @@
 $background-opacity: 0.95;
 
+$item-width: 200px;
+
 .projects {
   @include easeOut;
 
@@ -108,7 +110,7 @@ $background-opacity: 0.95;
         text-align: center;
 
         height: 300px;
-        width: 200px;
+        width: $item-width;
         background-color: $primary-color;
 
         img {
@@ -143,7 +145,6 @@ $background-opacity: 0.95;
       }
 
       display: grid;
-
     }
   }
 }
