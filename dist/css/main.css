@@ -170,6 +170,9 @@
         .projects .project-group .project-group-content .item img {
           transition: all 0.65s ease-in-out;
           width: 100%; }
+        .projects .project-group .project-group-content .item video {
+          transition: all 0.65s ease-in-out;
+          width: 100%; }
         .projects .project-group .project-group-content .item .btn-dark {
           transition: all 0.65s ease-in-out;
           padding: 0.5rem 0.5rem; }

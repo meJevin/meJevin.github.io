@@ -21,9 +21,7 @@ for (let i = 0; i < expandableButtons.length; ++i) {
       for (let j = 0; j < rowValues.length; ++j) {
         finalContentHeight += parseInt(rowValues[j].replace("px", ""));
       }
-
-      console.log("COmputed height: " + finalContentHeight);
-
+      
       content.style.maxHeight = finalContentHeight + "px";
       content.classList.add("show");
     }
@@ -32,7 +30,6 @@ for (let i = 0; i < expandableButtons.length; ++i) {
 
 function OnResize() {
   for (let i = 0; i < expandableButtons.length; ++i) {
-    console.log(i);
     var content = expandableButtons[i].nextElementSibling;
     if (content.classList.contains("show")) {
       let rowValues = document.defaultView
@@ -48,10 +45,6 @@ function OnResize() {
       if (content.style.maxHeight == finalContentHeight) {
         return;
       }
-
-      console.log(
-        "Recomputed: " + content.style.maxHeight + " to " + finalContentHeight
-      );
 
       content.style.maxHeight = finalContentHeight + "px";
     }
@@ -69,5 +62,18 @@ for (let i = 0; i < infoButtons.length; ++i) {
 
   infoButtons[i].addEventListener("mouseleave", event => {
     description.classList.remove("show");
+  });
+}
+
+const projectVideoPreviews = document.getElementsByClassName("item-video-preview");
+
+for (let i = 0; i < projectVideoPreviews.length; ++i) {
+  projectVideoPreviews[i].addEventListener("mouseenter", event => {
+    projectVideoPreviews[i].play();
+  });
+
+  projectVideoPreviews[i].addEventListener("mouseleave", event => {
+    projectVideoPreviews[i].pause();
+    projectVideoPreviews[i].currentTime = 0;
   });
 }

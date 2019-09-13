@@ -115,6 +115,11 @@ $background-opacity: 0.95;
           width: 100%;
         }
 
+        video {
+          @include easeOut;
+          width: 100%;
+        }
+
         .btn-dark {
           @include easeOut;
           padding: 0.5rem 0.5rem;
