@@ -104,7 +104,8 @@ $item-width: 200px;
       .item {
         @include easeOut;
 
-        display: inline-block;
+        display: flex;
+        flex-direction: column;
         position: relative;
 
         text-align: center;
@@ -127,6 +128,15 @@ $item-width: 200px;
           @include easeOut;
           padding: 0.5rem 0.5rem;
         }
+      }
+
+      .tag-container {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: 100%;
       }
 
       .item-tag {

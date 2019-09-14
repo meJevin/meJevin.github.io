@@ -5,19 +5,132 @@ let ProjectsGroupDiv = document.getElementById("project-group");
 
 AddProject(
   "Delphi",
-  "Test Name",
-  ["Delphi", "Nigga", "Fuck", "Whatever"],
-  "https://github.com/meJevin/meJevin.github.io",
-  "This is a nigga that just likes to fuck my ass",
-  "img/projects/delphi/ScreenCropper.mp4"
+
+  "Screen Cropper",
+
+  "videos/projects/Delphi/ScreenCropper.mp4",
+
+  "A screenshot taking program I made for myself a while back with Delhpi for Windows.",
+
+  "https://github.com/meJevin/Screen-Cropper",
+
+  ["Delphi", "Lazarus", "WinForms", "WinAPI", "Windows"]
 );
+
 AddProject(
   "Delphi",
-  "Test Name",
-  ["Delphi", "Nigga", "Fuck", "Whatever"],
+
+  "Key Logger",
+
+  "videos/projects/Delphi/KeyLogger.mp4",
+
+  "My attempt on creating a key logger. Every programmer has to make one of these, come on...",
+
+  "https://github.com/meJevin/Simple-Key-Logger",
+
+  [
+    "Delphi",
+    "Lazarus",
+    "WinForms",
+    "WinAPI",
+    "Windows",
+    "WinSocks",
+    "Indy10",
+    "Client-Server"
+  ]
+);
+
+AddProject(
+  "Delphi",
+
+  "PV Input",
+
+  "videos/projects/Delphi/PVInput.mp4",
+
+  "Application that monitors user keyboard input with ceratin keys. <br /> <br />I made it for my friends and myself to record their input history while in-game",
+
+  "https://github.com/meJevin/PVInput",
+
+  ["Delphi", "Lazarus", "WinForms", "WinAPI", "Windows"]
+);
+
+AddProject(
+  "C#",
+
+  "Lounge Radio",
+
+  "videos/projects/C#/LoungeRadio.mp4",
+
+  "An application I made for a friend to host his own radio station via HTTP.<br/><br/>Works on iOS and Anroid via Xamarin.Forms",
+
+  "https://github.com/meJevin/LRadio",
+
+  ["C#", "Mobile", "iOS", "Anroid", "Xamarin.Forms", "Cross-Platform"]
+);
+
+AddProject(
+  "C#",
+
+  "Philter",
+
+  "videos/projects/C#/Philter.mp4",
+
+  "This is an application made for a friend to help promote his own business related to cannabis.<br/><br/>It was made with Unity3D for iOS and Anroid and has a really complex and buitiful UI and uses RESTful API",
+
+  "https://github.com/meJevin/Philter",
+
+  [
+    "C#",
+    "Unity3D",
+    "Cross-Platform",
+    "REST",
+    "iOS",
+    "Android",
+    "JSON",
+    "Mobile"
+  ]
+);
+
+AddProject(
+  "C#",
+
+  "Screen Cropper",
+
+  "videos/projects/C#/ScreenCropper.mp4",
+
+  "A port of my screenshor taking program originally written in Delphi for C#",
+
+  "https://github.com/meJevin/ScreenCropperCSharp",
+
+  ["C#", "WinForms", "WinAPI", "Windows"]
+);
+
+AddProject(
+  "Web",
+
+  "My website",
+
+  "videos/projects/Web/MyWebsite.mp4",
+
+  "Yeah, this is my website!<br/><br/>It's using SASS as it's CSS preprocessor via node-sass",
+
   "https://github.com/meJevin/meJevin.github.io",
-  "This is a nigga that just likes to fuck my ass",
-  "img/projects/delphi/ScreenCropper.mp4"
+
+  ["Web", "HTML5", "CSS3", "SASS", "JavaScript"]
+);
+
+AddProject(
+  "Dart",
+
+  "PV Weather",
+
+  "videos/projects/Dart/PVWeather.mp4",
+
+  "A simple and clean cross-platform Weather app built using Flutter, OpenWeatherAPI and Firebase",
+
+  "https://github.com/meJevin/PVWeather",
+
+  ["Dart", "Flutter", "REST", "Firebase", "NoSQL", "Reactive", "iOS", "Android"]
 );
 
 const expandableButtons = document.getElementsByClassName(
@@ -25,6 +138,29 @@ const expandableButtons = document.getElementsByClassName(
 );
 
 window.addEventListener("resize", OnResize);
+
+function OnResize() {
+  for (let i = 0; i < expandableButtons.length; ++i) {
+    var content = expandableButtons[i].nextElementSibling;
+    if (content.classList.contains("show")) {
+      let rowValues = document.defaultView
+        .getComputedStyle(content, "")
+        .getPropertyValue("grid-template-rows")
+        .split(" ");
+      let finalContentHeight = expandableButtons[i].clientHeight;
+
+      for (let j = 0; j < rowValues.length; ++j) {
+        finalContentHeight += parseInt(rowValues[j].replace("px", ""));
+      }
+
+      if (content.style.maxHeight == finalContentHeight) {
+        return;
+      }
+
+      content.style.maxHeight = finalContentHeight + "px";
+    }
+  }
+}
 
 for (let i = 0; i < expandableButtons.length; ++i) {
   expandableButtons[i].addEventListener("click", event => {
@@ -48,29 +184,6 @@ for (let i = 0; i < expandableButtons.length; ++i) {
       content.classList.add("show");
     }
   });
-}
-
-function OnResize() {
-  for (let i = 0; i < expandableButtons.length; ++i) {
-    var content = expandableButtons[i].nextElementSibling;
-    if (content.classList.contains("show")) {
-      let rowValues = document.defaultView
-        .getComputedStyle(content, "")
-        .getPropertyValue("grid-template-rows")
-        .split(" ");
-      let finalContentHeight = expandableButtons[i].clientHeight;
-
-      for (let j = 0; j < rowValues.length; ++j) {
-        finalContentHeight += parseInt(rowValues[j].replace("px", ""));
-      }
-
-      if (content.style.maxHeight == finalContentHeight) {
-        return;
-      }
-
-      content.style.maxHeight = finalContentHeight + "px";
-    }
-  }
 }
 
 const infoButtons = document.getElementsByClassName("info-icon");
@@ -119,10 +232,10 @@ function GetCategory(categoryName) {
 function AddProject(
   categoryName,
   projectName,
-  tags,
-  projectLink,
+  videoPath,
   description,
-  videoPath
+  projectLink,
+  tags
 ) {
   let projectGroupElement = document.getElementsByClassName("project-group")[0];
 
@@ -188,6 +301,8 @@ function AddProject(
   AGitLinkIconElement.innerHTML = " " + projectName;
 
   AGitLinkElement.appendChild(AGitLinkIconElement);
+
+  itemElement.appendChild(AGitLinkElement);
 
   let tagContainerDivElement = document.createElement("div");
   tagContainerDivElement.className = "tag-container";
