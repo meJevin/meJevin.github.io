@@ -133,6 +133,7 @@ AddProject(
   ["Dart", "Flutter", "REST", "Firebase", "NoSQL", "Reactive", "iOS", "Android"]
 );
 
+
 const expandableButtons = document.getElementsByClassName(
   "project-group-expand-btn"
 );
@@ -245,7 +246,6 @@ function AddProject(
     category = AddCategory(categoryName);
     projectGroupElement.appendChild(category);
   }
-  console.log(category);
 
   let categoryContent = category.getElementsByClassName(
     "project-group-content"
@@ -255,6 +255,7 @@ function AddProject(
   itemElement.className = "item";
 
   let itemVideoDiv = document.createElement("div");
+  itemVideoDiv.className = "item-video-container";
 
   let videoElement = document.createElement("video");
   videoElement.className = "item-video-preview";
@@ -342,4 +343,22 @@ function AddCategory(categoryName) {
   Categories.push(categoryHtmlElement);
 
   return Categories[Categories.length - 1];
+}
+
+
+
+let videoPreviews = document.getElementsByClassName("item-video-container");
+
+for (let i = 0; i < videoPreviews.length; ++i) {
+  videoPreviews[i].addEventListener("mouseenter", event => {
+    // Get the video overlay and expand it
+    let videoElement = videoPreviews[i].children[0];
+    videoElement.classList.add("show");
+  });
+
+  videoPreviews[i].addEventListener("mouseleave", event => {
+    // Make the overlay small again
+    let videoElement = videoPreviews[i].children[0];
+    videoElement.classList.remove("show");
+  });
 }

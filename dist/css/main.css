@@ -168,6 +168,8 @@
         height: 300px;
         width: 200px;
         background-color: #363e41; }
+        .projects .project-group .project-group-content .item .item-video-preview {
+          transition: all 0.65s ease-in-out; }
         .projects .project-group .project-group-content .item img {
           transition: all 0.65s ease-in-out;
           width: 100%; }

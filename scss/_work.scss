@@ -114,6 +114,15 @@ $item-width: 200px;
         width: $item-width;
         background-color: $primary-color;
 
+        .item-video-preview {
+          @include easeOut;
+          &.show {
+          }
+        }
+
+        .item-video-container {
+        }
+
         img {
           @include easeOut;
           width: 100%;
