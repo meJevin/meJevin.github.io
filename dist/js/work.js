@@ -14,7 +14,7 @@ AddProject(
 
   "https://github.com/meJevin/Screen-Cropper",
 
-  ["Delphi", "Lazarus", "WinForms", "WinAPI", "Windows"]
+  ["Delphi", "Lazarus", "WinForms", "WinAPI", "Dektop"]
 );
 
 AddProject(
@@ -33,7 +33,7 @@ AddProject(
     "Lazarus",
     "WinForms",
     "WinAPI",
-    "Windows",
+    "Dektop",
     "WinSocks",
     "Indy10",
     "Client-Server"
@@ -51,7 +51,7 @@ AddProject(
 
   "https://github.com/meJevin/PVInput",
 
-  ["Delphi", "Lazarus", "WinForms", "WinAPI", "Windows"]
+  ["Delphi", "Lazarus", "WinForms", "WinAPI", "Dektop"]
 );
 
 AddProject(
@@ -65,7 +65,7 @@ AddProject(
 
   "https://github.com/meJevin/LRadio",
 
-  ["C#", "Mobile", "iOS", "Anroid", "Xamarin.Forms", "Cross-Platform"]
+  ["C#", "Mobile", "iOS", "Anroid", "Xamarin.Forms"]
 );
 
 AddProject(
@@ -79,16 +79,7 @@ AddProject(
 
   "https://github.com/meJevin/Philter",
 
-  [
-    "C#",
-    "Unity3D",
-    "Cross-Platform",
-    "REST",
-    "iOS",
-    "Android",
-    "JSON",
-    "Mobile"
-  ]
+  ["C#", "Unity3D", "REST", "iOS", "Android", "JSON", "Mobile"]
 );
 
 AddProject(
@@ -205,14 +196,51 @@ const projectVideoPreviews = document.getElementsByClassName(
 );
 
 for (let i = 0; i < projectVideoPreviews.length; ++i) {
-  projectVideoPreviews[i].addEventListener("mouseenter", event => {
+  // Adds hover over playback
+  projectVideoPreviews[i].addEventListener("mouseover", event => {
+    projectVideoPreviews[i].nextElementSibling.classList.add("show");
+    projectVideoPreviews[i].nextElementSibling.children[0].classList.add(
+      "show"
+    );
     projectVideoPreviews[i].play();
   });
 
-  projectVideoPreviews[i].addEventListener("mouseleave", event => {
-    projectVideoPreviews[i].pause();
-    projectVideoPreviews[i].currentTime = 0;
+  // And removes it
+  projectVideoPreviews[i].addEventListener("mouseout", event => {
+    // Only if we're not on the fullscreen button
+    if (event.toElement.className != "video-fullscreen-button show") {
+      projectVideoPreviews[i].nextElementSibling.classList.remove("show");
+      projectVideoPreviews[i].nextElementSibling.children[0].classList.remove(
+        "show"
+      );
+      projectVideoPreviews[i].pause();
+      projectVideoPreviews[i].currentTime = 0;
+    }
   });
+
+  // Also ann fullscreen button functionality
+  projectVideoPreviews[i].nextElementSibling.addEventListener(
+    "click",
+    event => {
+      console.log(projectVideoPreviews[i]);
+      FullscreenVideo(projectVideoPreviews[i]);
+    }
+  );
+}
+
+function FullscreenVideo(elem) {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) {
+    /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) {
+    /* Chrome, Safari and Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) {
+    /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
 }
 
 function GetCategory(categoryName) {
@@ -245,7 +273,6 @@ function AddProject(
     category = AddCategory(categoryName);
     projectGroupElement.appendChild(category);
   }
-  console.log(category);
 
   let categoryContent = category.getElementsByClassName(
     "project-group-content"
@@ -255,6 +282,7 @@ function AddProject(
   itemElement.className = "item";
 
   let itemVideoDiv = document.createElement("div");
+  itemVideoDiv.className = "item-video-container";
 
   let videoElement = document.createElement("video");
   videoElement.className = "item-video-preview";
@@ -268,6 +296,16 @@ function AddProject(
   videoElement.appendChild(videoSourceElement);
 
   itemVideoDiv.appendChild(videoElement);
+
+  let videoFullscreenButton = document.createElement("button");
+  videoFullscreenButton.className = "video-fullscreen-button";
+
+  let fullscreenButtonImage = document.createElement("i");
+  fullscreenButtonImage.className = "fas fa-expand";
+
+  videoFullscreenButton.appendChild(fullscreenButtonImage);
+
+  itemVideoDiv.appendChild(videoFullscreenButton);
 
   itemElement.appendChild(itemVideoDiv);
 

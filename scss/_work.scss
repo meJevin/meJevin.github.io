@@ -73,6 +73,8 @@ $item-width: 200px;
       .item-description {
         @include easeOut;
 
+        pointer-events: none;
+
         position: absolute;
 
         display: flex;
@@ -113,6 +115,52 @@ $item-width: 200px;
         height: 300px;
         width: $item-width;
         background-color: $primary-color;
+
+        .item-video-container {
+          @include easeOut;
+          position: relative;
+        }
+
+        .video-fullscreen-button {
+          @include easeOut;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          position: absolute;
+          bottom: -0.5rem;
+          left: 0rem;
+          width: 1rem;
+          height: 1rem;
+          border: none;
+          padding: 0px;
+
+          background-color: transparent;
+          margin: 0rem 0.5rem;
+          outline: none;
+
+          :focus {
+            outline: none;
+          }
+
+          i {
+            pointer-events: none;
+
+            @include easeOut;
+            color: transparent;
+            &.show {
+              color: white;
+            }
+          }
+
+          &.show {
+            bottom: 1rem;
+          }
+        }
+
+        .item-video-preview {
+        }
 
         img {
           @include easeOut;

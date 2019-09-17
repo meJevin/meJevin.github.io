@@ -141,6 +141,7 @@
           visibility: visible; }
       .projects .project-group .project-group-content .item-description {
         transition: all 0.65s ease-in-out;
+        pointer-events: none;
         position: absolute;
         display: flex;
         align-items: center;
@@ -168,6 +169,34 @@
         height: 300px;
         width: 200px;
         background-color: #363e41; }
+        .projects .project-group .project-group-content .item .item-video-container {
+          transition: all 0.65s ease-in-out;
+          position: relative; }
+        .projects .project-group .project-group-content .item .video-fullscreen-button {
+          transition: all 0.65s ease-in-out;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          bottom: -0.5rem;
+          left: 0rem;
+          width: 1rem;
+          height: 1rem;
+          border: none;
+          padding: 0px;
+          background-color: transparent;
+          margin: 0rem 0.5rem;
+          outline: none; }
+          .projects .project-group .project-group-content .item .video-fullscreen-button :focus {
+            outline: none; }
+          .projects .project-group .project-group-content .item .video-fullscreen-button i {
+            pointer-events: none;
+            transition: all 0.65s ease-in-out;
+            color: transparent; }
+            .projects .project-group .project-group-content .item .video-fullscreen-button i.show {
+              color: white; }
+          .projects .project-group .project-group-content .item .video-fullscreen-button.show {
+            bottom: 1rem; }
         .projects .project-group .project-group-content .item img {
           transition: all 0.65s ease-in-out;
           width: 100%; }
