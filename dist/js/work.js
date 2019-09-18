@@ -124,7 +124,6 @@ AddProject(
   ["Dart", "Flutter", "REST", "Firebase", "NoSQL", "Reactive", "iOS", "Android"]
 );
 
-
 const expandableButtons = document.getElementsByClassName(
   "project-group-expand-btn"
 );
@@ -229,6 +228,13 @@ for (let i = 0; i < projectVideoPreviews.length; ++i) {
   );
 }
 
+function UrlExists(url) {
+  var http = new XMLHttpRequest();
+  http.open("HEAD", url, false);
+  http.send();
+  return http.status != 404;
+}
+
 function FullscreenVideo(elem) {
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
@@ -289,6 +295,10 @@ function AddProject(
   videoElement.className = "item-video-preview";
   videoElement.toggleAttribute("loop");
   videoElement.toggleAttribute("muted");
+
+  if (!UrlExists(videoPath)) {
+    videoPath = "videos/projects/Delphi/KeyLogger.mp4";
+  }
 
   let videoSourceElement = document.createElement("source");
   videoSourceElement.setAttribute("src", videoPath);
@@ -382,8 +392,6 @@ function AddCategory(categoryName) {
 
   return Categories[Categories.length - 1];
 }
-
-
 
 let videoPreviews = document.getElementsByClassName("item-video-container");
 
