@@ -31,7 +31,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba($primary-color, $background-opacity);
+    background: rgba($primary-color, 0.85);
     z-index: -1;
 
     @include easeOut;
@@ -40,6 +40,10 @@ body {
       background: rgba($primary-color, 0);
     }
   }
+}
+
+button {
+  cursor: pointer;
 }
 
 h1,
@@ -63,6 +67,7 @@ h3 {
 a {
   color: set-text-color($primary-color);
   text-decoration: none;
+  font-family: "Roboto";
 }
 
 header {
