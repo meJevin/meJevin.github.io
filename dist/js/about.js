@@ -14,3 +14,13 @@ function hideAboutBG() {
   mainElement.classList.add("hide");
   overlayElement.classList.add("hide");
 }
+
+setCopyRight();
+
+function setCopyRight() {
+  let footer = document.getElementById("main-footer");
+
+  if (footer != null) {
+    footer.innerHTML = "Copyright &copy; " + new Date().getFullYear();
+  }
+}

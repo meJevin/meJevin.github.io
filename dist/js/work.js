@@ -47,7 +47,7 @@ AddProject(
 
   "videos/projects/Delphi/PVInput.mp4",
 
-  "Application that monitors user keyboard input with ceratin keys. <br /> <br />I made it for my friends and myself to record their input history while in-game",
+  "Application that monitors user keyboard input. <br /> <br />I made it for myself to record input history while in-game",
 
   "https://github.com/meJevin/PVInput",
 
@@ -61,7 +61,7 @@ AddProject(
 
   "videos/projects/C#/LoungeRadio.mp4",
 
-  "An application I made for a friend to host his own radio station via HTTP.<br/><br/>Works on iOS and Anroid via Xamarin.Forms",
+  "An application that streams radio station audio via HTTP.<br/><br/>Works on iOS and Anroid via Xamarin.Forms",
 
   "https://github.com/meJevin/LRadio",
 
@@ -75,7 +75,7 @@ AddProject(
 
   "videos/projects/C#/Philter.mp4",
 
-  "This is an application made for a friend to help promote his own business related to cannabis.<br/><br/>It was made with Unity3D for iOS and Anroid and has a really complex and buitiful UI and uses RESTful API",
+  "App that help promote some business related to cannabis.<br/><br/>It was made with Unity3D for iOS and Anroid and has a really complex and buitiful UI",
 
   "https://github.com/meJevin/Philter",
 
@@ -130,6 +130,10 @@ const expandableButtons = document.getElementsByClassName(
 
 window.addEventListener("resize", OnResize);
 
+function IsTouchDevice() {
+  return typeof window.ontouchstart !== "undefined";
+}
+
 function OnResize() {
   for (let i = 0; i < expandableButtons.length; ++i) {
     var content = expandableButtons[i].nextElementSibling;
@@ -182,13 +186,29 @@ const infoButtons = document.getElementsByClassName("info-icon");
 for (let i = 0; i < infoButtons.length; ++i) {
   let description = infoButtons[i].previousElementSibling;
 
-  infoButtons[i].addEventListener("mouseenter", event => {
-    description.classList.add("show");
-  });
+  if (IsTouchDevice()) {
+    // toggle description visiblity
+    infoButtons[i].addEventListener("click", event => {
+      if (description.classList.contains("show")) {
+        infoButtons[i].classList.remove("show");
+        description.classList.remove("show");
+      } else {
+        infoButtons[i].classList.add("show");
+        description.classList.add("show");
+      }
+    });
+  } else {
+    // hover-toggle description visiblity
+    infoButtons[i].addEventListener("mouseenter", event => {
+      description.classList.add("show");
+      infoButtons[i].classList.add("show");
+    });
 
-  infoButtons[i].addEventListener("mouseleave", event => {
-    description.classList.remove("show");
-  });
+    infoButtons[i].addEventListener("mouseleave", event => {
+      description.classList.remove("show");
+      infoButtons[i].classList.remove("show");
+    });
+  }
 }
 
 const projectVideoPreviews = document.getElementsByClassName(
@@ -288,26 +308,6 @@ function AddProject(
   let itemElement = document.createElement("div");
   itemElement.className = "item";
 
-  let itemVideoDiv = document.createElement("div");
-  itemVideoDiv.className = "item-video-container";
-
-  let videoElement = document.createElement("video");
-  videoElement.className = "item-video-preview";
-  videoElement.toggleAttribute("loop");
-  videoElement.toggleAttribute("muted");
-
-  if (!UrlExists(videoPath)) {
-    videoPath = "videos/projects/Delphi/KeyLogger.mp4";
-  }
-
-  let videoSourceElement = document.createElement("source");
-  videoSourceElement.setAttribute("src", videoPath);
-  videoSourceElement.setAttribute("type", "video/mp4");
-
-  videoElement.appendChild(videoSourceElement);
-
-  itemVideoDiv.appendChild(videoElement);
-
   let videoFullscreenButton = document.createElement("button");
   videoFullscreenButton.className = "video-fullscreen-button";
 
@@ -315,10 +315,6 @@ function AddProject(
   fullscreenButtonImage.className = "fas fa-expand";
 
   videoFullscreenButton.appendChild(fullscreenButtonImage);
-
-  itemVideoDiv.appendChild(videoFullscreenButton);
-
-  itemElement.appendChild(itemVideoDiv);
 
   let itemDescriptionDiv = document.createElement("div");
   itemDescriptionDiv.classList = "item-description";
@@ -340,6 +336,9 @@ function AddProject(
 
   itemElement.appendChild(infoIconElement);
 
+  let itemNameContainer = document.createElement("div");
+  itemNameContainer.className = "item-name-container";
+
   let AGitLinkElement = document.createElement("a");
   AGitLinkElement.setAttribute("href", projectLink);
   AGitLinkElement.setAttribute("target", "_blank");
@@ -351,7 +350,9 @@ function AddProject(
 
   AGitLinkElement.appendChild(AGitLinkIconElement);
 
-  itemElement.appendChild(AGitLinkElement);
+  itemNameContainer.appendChild(AGitLinkElement);
+
+  itemElement.appendChild(itemNameContainer);
 
   let tagContainerDivElement = document.createElement("div");
   tagContainerDivElement.className = "tag-container";
@@ -393,18 +394,12 @@ function AddCategory(categoryName) {
   return Categories[Categories.length - 1];
 }
 
-let videoPreviews = document.getElementsByClassName("item-video-container");
+setCopyRight();
 
-for (let i = 0; i < videoPreviews.length; ++i) {
-  videoPreviews[i].addEventListener("mouseenter", event => {
-    // Get the video overlay and expand it
-    let videoElement = videoPreviews[i].children[0];
-    videoElement.classList.add("show");
-  });
+function setCopyRight() {
+  let footer = document.getElementById("main-footer");
 
-  videoPreviews[i].addEventListener("mouseleave", event => {
-    // Make the overlay small again
-    let videoElement = videoPreviews[i].children[0];
-    videoElement.classList.remove("show");
-  });
+  if (footer != null) {
+    footer.innerHTML = "Copyright &copy; " + new Date().getFullYear();
+  }
 }

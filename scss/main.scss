@@ -58,9 +58,7 @@ h3 {
   }
 
   &.sm-heading {
-    margin-bottom: 2rem;
-    padding: 0.2rem 0rem;
-    background: rgba(lighten($primary-color, 2), 0.5);
+    margin: 1rem;
   }
 }
 
@@ -101,6 +99,14 @@ main {
         @include easeOut();
       }
     }
+  }
+
+  .main-info {
+    margin-bottom: 2rem;
+    padding: 0.2rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+    display: flex;
+    justify-content: space-between;
   }
 
   &#home {
