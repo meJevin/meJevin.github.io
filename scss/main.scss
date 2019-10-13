@@ -58,7 +58,8 @@ h3 {
   }
 
   &.sm-heading {
-    margin: 1rem;
+    margin: 1.5rem 0rem;
+    background: rgba(59, 67, 71, 0.5);
   }
 }
 
@@ -223,7 +224,9 @@ span {
 
     h6 {
       font-size: 0.8rem;
-      padding: 0;
+      display: inline-block;
+      padding: 0.5rem;
+      background-color: rgba(black, 0.1);
       margin: 25px 0px 15px 0px;
     }
 
@@ -250,7 +253,6 @@ span {
 .btn {
   display: block;
   padding: 0.5rem 1rem;
-  border: 0;
   margin-bottom: 0.3rem;
 
   &:hover {
