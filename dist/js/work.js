@@ -124,7 +124,7 @@ AddProject(
   ["Dart", "Flutter", "REST", "Firebase", "NoSQL", "Reactive", "iOS", "Android"]
 );
 
-// Here we have all expandable buttons filled with elements
+// Here we have all expandable buttons filled with elements (div class='item')
 
 // Get them
 const expandableButtons = document.getElementsByClassName(
@@ -141,6 +141,29 @@ ProcessInfoButtons();
 SetCopyRight();
 
 window.addEventListener("resize", OnResize);
+
+const projectItems = document.getElementsByClassName("item");
+
+ProcessProjectItems();
+
+function ProcessProjectItems() {
+  for (let i = 0; i < projectItems.length; ++i) {
+    let infoButton = projectItems[i].getElementsByClassName("info-icon")[0];
+
+    if (IsTouchDevice()) {
+      infoButton.classList.add("revealed");
+    } else {
+      projectItems[i].addEventListener("mouseenter", event => {
+        // Handle on mouseover for item and add 'show' to classlist of info button of this item
+        infoButton.classList.add("revealed");
+      });
+
+      projectItems[i].addEventListener("mouseleave", event => {
+        infoButton.classList.remove("revealed");
+      });
+    }
+  }
+}
 
 function IsTouchDevice() {
   return typeof window.ontouchstart !== "undefined";
