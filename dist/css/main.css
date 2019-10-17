@@ -139,9 +139,7 @@
         color: white;
         background-color: black; }
         .projects .project-group .project-group-content .info-icon.show {
-          background-color: rgba(31, 184, 255, 0.9);
-          color: rgba(255, 255, 255, 0.9);
-          visibility: visible; }
+          background-color: rgba(31, 184, 255, 0.9); }
       .projects .project-group .project-group-content .item-description {
         transition: all 0.65s ease-in-out;
         pointer-events: none;

@@ -70,8 +70,6 @@ $item-width: 200px;
 
         &.show {
           background-color: rgba(darken($secondary-color, 10), 0.9);
-          color: rgba(white, 0.9);
-          visibility: visible;
         }
       }
 
