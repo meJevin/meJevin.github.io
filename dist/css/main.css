@@ -131,6 +131,7 @@
       display: grid; }
       .projects .project-group .project-group-content .info-icon {
         transition: all 0.65s ease-in-out;
+        opacity: 0.2;
         position: absolute;
         bottom: 0;
         right: 0;
@@ -138,7 +139,10 @@
         margin: 0.5rem 0.5rem;
         color: white;
         background-color: black; }
+        .projects .project-group .project-group-content .info-icon.revealed {
+          opacity: 0.2; }
         .projects .project-group .project-group-content .info-icon.show {
+          opacity: 1;
           background-color: rgba(31, 184, 255, 0.9);
           color: rgba(255, 255, 255, 0.9);
           visibility: visible; }
