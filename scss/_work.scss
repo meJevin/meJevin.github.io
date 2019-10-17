@@ -41,7 +41,8 @@ $item-width: 200px;
         padding: 0.35rem;
       }
 
-      &.expanded {
+      &.show {
+        background-color: red;
       }
     }
 

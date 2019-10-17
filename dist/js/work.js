@@ -124,9 +124,21 @@ AddProject(
   ["Dart", "Flutter", "REST", "Firebase", "NoSQL", "Reactive", "iOS", "Android"]
 );
 
+// Here we have all expandable buttons filled with elements
+
+// Get them
 const expandableButtons = document.getElementsByClassName(
   "project-group-expand-btn"
 );
+
+ProcessExpandableButtons();
+
+// Get info button
+const infoButtons = document.getElementsByClassName("info-icon");
+
+ProcessInfoButtons();
+
+SetCopyRight();
 
 window.addEventListener("resize", OnResize);
 
@@ -157,116 +169,60 @@ function OnResize() {
   }
 }
 
-for (let i = 0; i < expandableButtons.length; ++i) {
-  expandableButtons[i].addEventListener("click", event => {
-    expandableButtons[i].classList.toggle("expanded");
-    var content = expandableButtons[i].nextElementSibling;
-    if (content.classList.contains("show")) {
-      content.style.maxHeight = "0";
-      content.classList.remove("show");
-    } else {
-      let rowValues = document.defaultView
-        .getComputedStyle(content, "")
-        .getPropertyValue("grid-template-rows")
-        .split(" ");
-      let finalContentHeight = 0;
-
-      for (let j = 0; j < rowValues.length; ++j) {
-        finalContentHeight += parseInt(rowValues[j].replace("px", ""));
-      }
-
-      content.style.maxHeight = finalContentHeight + "px";
-      content.classList.add("show");
-    }
-  });
-}
-
-const infoButtons = document.getElementsByClassName("info-icon");
-
-for (let i = 0; i < infoButtons.length; ++i) {
-  let description = infoButtons[i].previousElementSibling;
-
-  if (IsTouchDevice()) {
-    // toggle description visiblity
-    infoButtons[i].addEventListener("click", event => {
-      if (description.classList.contains("show")) {
-        infoButtons[i].classList.remove("show");
-        description.classList.remove("show");
+function ProcessExpandableButtons() {
+  for (let i = 0; i < expandableButtons.length; ++i) {
+    // Click event to expand
+    expandableButtons[i].addEventListener("click", event => {
+      expandableButtons[i].classList.toggle("expanded");
+      var content = expandableButtons[i].nextElementSibling;
+      if (content.classList.contains("show")) {
+        content.style.maxHeight = "0";
+        content.classList.remove("show");
       } else {
-        infoButtons[i].classList.add("show");
-        description.classList.add("show");
-      }
-    });
-  } else {
-    // hover-toggle description visiblity
-    infoButtons[i].addEventListener("mouseenter", event => {
-      description.classList.add("show");
-      infoButtons[i].classList.add("show");
-    });
+        let rowValues = document.defaultView
+          .getComputedStyle(content, "")
+          .getPropertyValue("grid-template-rows")
+          .split(" ");
+        let finalContentHeight = 0;
 
-    infoButtons[i].addEventListener("mouseleave", event => {
-      description.classList.remove("show");
-      infoButtons[i].classList.remove("show");
+        for (let j = 0; j < rowValues.length; ++j) {
+          finalContentHeight += parseInt(rowValues[j].replace("px", ""));
+        }
+
+        content.style.maxHeight = finalContentHeight + "px";
+        content.classList.add("show");
+      }
     });
   }
 }
 
-const projectVideoPreviews = document.getElementsByClassName(
-  "item-video-preview"
-);
+function ProcessInfoButtons() {
+  for (let i = 0; i < infoButtons.length; ++i) {
+    let description = infoButtons[i].previousElementSibling;
 
-for (let i = 0; i < projectVideoPreviews.length; ++i) {
-  // Adds hover over playback
-  projectVideoPreviews[i].addEventListener("mouseover", event => {
-    projectVideoPreviews[i].nextElementSibling.classList.add("show");
-    projectVideoPreviews[i].nextElementSibling.children[0].classList.add(
-      "show"
-    );
-    projectVideoPreviews[i].play();
-  });
+    if (IsTouchDevice()) {
+      // toggle description visiblity
+      infoButtons[i].addEventListener("click", event => {
+        if (description.classList.contains("show")) {
+          infoButtons[i].classList.remove("show");
+          description.classList.remove("show");
+        } else {
+          infoButtons[i].classList.add("show");
+          description.classList.add("show");
+        }
+      });
+    } else {
+      // hover-toggle description visiblity
+      infoButtons[i].addEventListener("mouseenter", event => {
+        description.classList.add("show");
+        infoButtons[i].classList.add("show");
+      });
 
-  // And removes it
-  projectVideoPreviews[i].addEventListener("mouseout", event => {
-    // Only if we're not on the fullscreen button
-    if (event.toElement.className != "video-fullscreen-button show") {
-      projectVideoPreviews[i].nextElementSibling.classList.remove("show");
-      projectVideoPreviews[i].nextElementSibling.children[0].classList.remove(
-        "show"
-      );
-      projectVideoPreviews[i].pause();
-      projectVideoPreviews[i].currentTime = 0;
+      infoButtons[i].addEventListener("mouseleave", event => {
+        description.classList.remove("show");
+        infoButtons[i].classList.remove("show");
+      });
     }
-  });
-
-  // Also ann fullscreen button functionality
-  projectVideoPreviews[i].nextElementSibling.addEventListener(
-    "click",
-    event => {
-      console.log(projectVideoPreviews[i]);
-      FullscreenVideo(projectVideoPreviews[i]);
-    }
-  );
-}
-
-function UrlExists(url) {
-  var http = new XMLHttpRequest();
-  http.open("HEAD", url, false);
-  http.send();
-  return http.status != 404;
-}
-
-function FullscreenVideo(elem) {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.mozRequestFullScreen) {
-    /* Firefox */
-    elem.mozRequestFullScreen();
-  } else if (elem.webkitRequestFullscreen) {
-    /* Chrome, Safari and Opera */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) {
-    /* IE/Edge */
-    elem.msRequestFullscreen();
   }
 }
 
@@ -394,9 +350,7 @@ function AddCategory(categoryName) {
   return Categories[Categories.length - 1];
 }
 
-setCopyRight();
-
-function setCopyRight() {
+function SetCopyRight() {
   let footer = document.getElementById("main-footer");
 
   if (footer != null) {
