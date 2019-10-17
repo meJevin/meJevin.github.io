@@ -41,8 +41,8 @@ $item-width: 200px;
         padding: 0.35rem;
       }
 
-      &.show {
-        background-color: red;
+      &.expanded {
+        background-color: rgba(darken($primary-color, 10), 0.95);
       }
     }
 
@@ -159,9 +159,6 @@ $item-width: 200px;
         margin: 0.3rem 0.2rem;
         color: white;
         background-color: rgba($secondary-color, 0.5);
-      }
-
-      &.show {
       }
 
       display: grid;

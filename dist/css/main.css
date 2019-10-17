@@ -122,8 +122,8 @@
         font-weight: 300;
         background-color: rgba(82, 200, 255, 0.5);
         padding: 0.35rem; }
-      .projects .project-group .project-group-expand-btn.show {
-        background-color: red; }
+      .projects .project-group .project-group-expand-btn.expanded {
+        background-color: rgba(31, 35, 37, 0.95); }
     .projects .project-group .project-group-content {
       position: relative;
       transition: all 0.65s ease-in-out;
