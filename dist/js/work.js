@@ -325,9 +325,15 @@ function AddProject(
 
   let AGitLinkIconElement = document.createElement("i");
   AGitLinkIconElement.className = "fab fa-github";
-  AGitLinkIconElement.innerHTML = " " + projectName;
+
+  let ProjectNameDiv = document.createElement("div");
+  ProjectNameDiv.className = "project-name-text";
+
+  ProjectNameDiv.innerHTML = projectName;
 
   AGitLinkElement.appendChild(AGitLinkIconElement);
+
+  AGitLinkElement.appendChild(ProjectNameDiv);
 
   itemNameContainer.appendChild(AGitLinkElement);
 

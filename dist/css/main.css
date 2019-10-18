@@ -193,10 +193,11 @@
         justify-content: center;
         flex-wrap: wrap;
         height: 100%; }
-      .projects .project-group .project-group-content .item-name-container {
+      .projects .project-group .project-group-content .item-name-container a {
         display: flex;
-        align-items: baseline; }
-        .projects .project-group .project-group-content .item-name-container a {
+        align-items: center; }
+        .projects .project-group .project-group-content .item-name-container a .project-name-text {
+          margin: 0rem 1rem;
           width: 100%; }
       .projects .project-group .project-group-content .item-tag {
         display: inline-block;

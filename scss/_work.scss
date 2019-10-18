@@ -156,11 +156,15 @@ $item-width: 200px;
       }
 
       .item-name-container {
-        display: flex;
-        align-items: baseline;
-
         a {
-          width: 100%;
+          display: flex;
+          align-items: center;
+
+          .project-name-text {
+            margin: 0rem 1rem;
+
+            width: 100%;
+          }
         }
       }
 
