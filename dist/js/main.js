@@ -51,6 +51,7 @@ function toggleContacts() {
     contactButton.classList.remove("show");
   } else {
     contacts.classList.add("show");
+
     contactButton.getElementsByTagName("i")[0].classList.add("show");
     contactButton.classList.add("show");
   }
