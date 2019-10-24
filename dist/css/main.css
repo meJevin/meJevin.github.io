@@ -306,16 +306,48 @@ main {
         color: #52c8ff;
         transition: all 0.65s ease-in-out; }
   main .contact-info {
-    background-color: rgba(82, 200, 255, 0.1);
-    display: inline-flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding: 0rem 1rem;
-    margin: 4rem 0rem; }
-    main .contact-info h2 {
-      user-select: none;
-      margin-right: 1rem; }
+    transition: all 0.65s ease-in-out;
+    display: block; }
+    main .contact-info .contact-info-button {
+      transition: all 0.65s ease-in-out;
+      background-color: rgba(82, 200, 255, 0.1);
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 0rem 1rem;
+      margin-top: 4rem;
+      margin-bottom: 0.5rem; }
+      main .contact-info .contact-info-button i {
+        transition: all 0.65s ease-in-out;
+        color: white;
+        transform-origin: center;
+        margin-left: 0.5rem; }
+        main .contact-info .contact-info-button i.show {
+          transform: rotate(180deg);
+          margin-left: 1.5rem; }
+      main .contact-info .contact-info-button h2 {
+        transition: all 0.65s ease-in-out;
+        user-select: none;
+        margin: 0 0.5rem;
+        color: white; }
+    main .contact-info .contacts {
+      transition: all 0.65s ease-in-out;
+      opacity: 0; }
+      main .contact-info .contacts a {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 0.8rem; }
+      main .contact-info .contacts div {
+        margin-bottom: 0.5rem; }
+      main .contact-info .contacts i {
+        transition: all 0.65s ease-in-out;
+        color: white;
+        margin-right: 0.5rem; }
+      main .contact-info .contacts.show {
+        transition: all 0.65s ease-in-out;
+        opacity: 1; }
+        main .contact-info .contacts.show i {
+          margin-right: 1rem; }
   main .main-info {
     margin-bottom: 2rem;
     padding: 0.2rem;

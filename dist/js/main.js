@@ -37,3 +37,20 @@ function toggleMenu() {
     showMenu = false;
   }
 }
+
+const contactButton = document.getElementsByClassName("contact-info-button")[0];
+const contacts = document.getElementsByClassName("contacts")[0];
+
+contactButton.addEventListener("click", toggleContacts);
+
+function toggleContacts() {
+  if (contacts.classList.contains("show")) {
+    contacts.classList.remove("show");
+
+    contactButton.getElementsByTagName("i")[0].classList.remove("show");
+  }
+  else {
+    contacts.classList.add("show");
+    contactButton.getElementsByTagName("i")[0].classList.add("show");
+  }
+}
