@@ -324,6 +324,7 @@ span {
 
     h3 {
       text-align: left;
+
       a {
         @include easeOut;
         padding: 0.5rem;
@@ -332,6 +333,7 @@ span {
           background-color: darken($secondary-color, 0.5);
         }
       }
+
       span {
         color: $secondary-color;
         font-weight: 300;
