@@ -313,6 +313,7 @@ main {
     main .contact-info .contact-info-button {
       transition: all 0.65s ease-in-out;
       background-color: rgba(82, 200, 255, 0.1);
+      cursor: pointer;
       display: inline-flex;
       flex-wrap: wrap;
       align-items: center;

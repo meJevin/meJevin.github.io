@@ -104,7 +104,6 @@ main {
 
   .contact-info {
     @include easeOut;
-
     margin-top: 4rem;
 
     height: 100%;
@@ -113,6 +112,8 @@ main {
     .contact-info-button {
       @include easeOut;
       background-color: rgba($secondary-color, 0.1);
+
+      cursor: pointer;
 
       i {
         @include easeOut;
