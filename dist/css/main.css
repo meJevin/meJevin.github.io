@@ -307,6 +307,8 @@ main {
         transition: all 0.65s ease-in-out; }
   main .contact-info {
     transition: all 0.65s ease-in-out;
+    margin-top: 4rem;
+    height: 100%;
     display: block; }
     main .contact-info .contact-info-button {
       transition: all 0.65s ease-in-out;
@@ -316,7 +318,6 @@ main {
       align-items: center;
       justify-content: center;
       padding: 0rem 1rem;
-      margin-top: 4rem;
       margin-bottom: 0.5rem; }
       main .contact-info .contact-info-button i {
         transition: all 0.65s ease-in-out;
@@ -526,7 +527,7 @@ span.hover-for-bg {
 
 @media screen and (max-width: 500px) {
   main {
-    padding: 4.5rem 1.5rem; }
+    padding: 1.5rem; }
     main .lg-heading {
       font-size: 4rem;
       margin-bottom: 4rem; }
