@@ -48,9 +48,10 @@ function toggleContacts() {
     contacts.classList.remove("show");
 
     contactButton.getElementsByTagName("i")[0].classList.remove("show");
-  }
-  else {
+    contactButton.classList.remove("show");
+  } else {
     contacts.classList.add("show");
     contactButton.getElementsByTagName("i")[0].classList.add("show");
+    contactButton.classList.add("show");
   }
 }

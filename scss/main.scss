@@ -102,83 +102,96 @@ main {
     }
   }
 
-  
-
-.contact-info {
-  @include easeOut;
+  .contact-info {
+    @include easeOut;
 
     margin-top: 4rem;
 
     height: 100%;
-  display: block;
+    display: block;
 
-  .contact-info-button {
-    @include easeOut;
-    background-color: rgba($secondary-color, 0.1);
-
-    i {
+    .contact-info-button {
       @include easeOut;
-      color: white;
-      transform-origin: center;
-
-      margin-left: 0.5rem;
-
-      &.show{
-        transform: rotate(180deg);
-        margin-left: 1.5rem;
-      }
-    }
-    display: inline-flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    
-    padding: 0rem 1rem;
-
-    h2 {
-      @include easeOut;
-      user-select: none;
-
-      margin: 0 0.5rem;
-
-      color: white;
-    }
-
-    margin-bottom: 0.5rem;
-  } 
-
-  .contacts {
-    @include easeOut;
-
-    opacity: 0;
-
-
-a{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 0.8rem;
-}
-
-div{
-  margin-bottom: 0.5rem;
-}
-
-    i {
-    @include easeOut;
-      color: white;
-      margin-right: 0.5rem;
-    }
-
-    &.show {
-    @include easeOut;
-      opacity: 1;
+      background-color: rgba($secondary-color, 0.1);
 
       i {
-        margin-right: 1rem;
+        @include easeOut;
+        color: white;
+
+        font-size: 1.25rem;
+
+        margin: 0rem 1rem;
+
+        &.show {
+          transform: rotateZ(180deg);
+        }
+      }
+
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      h2 {
+        @include easeOut;
+        user-select: none;
+
+        margin: 0 1rem;
+
+        color: white;
+      }
+
+      &.show {
+        background-color: rgba($secondary-color, 0.35);
+      }
+
+      margin-bottom: 0.5rem;
+    }
+
+    .contacts {
+      @include easeOut;
+
+      opacity: 0;
+
+      div {
+        @include easeOut;
+
+        padding: 0.25rem;
+      }
+
+      i {
+        @include easeOut;
+
+        color: white;
+
+        margin: 0rem 2rem;
+        transform: scale(0.85);
+      }
+
+      a {
+        @include easeOut;
+
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 0.8rem;
+
+        margin: 0rem 2rem;
+      }
+
+      &.show {
+        @include easeOut;
+        opacity: 1;
+
+        i {
+          margin: 0rem 0.5rem;
+          transform: scale(1);
+        }
+
+        a {
+          margin: 0rem 0.5rem;
+        }
       }
     }
   }
-}
-
 
   .main-info {
     margin-bottom: 2rem;
