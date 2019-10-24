@@ -305,6 +305,17 @@ main {
       main .icons a:hover {
         color: #52c8ff;
         transition: all 0.65s ease-in-out; }
+  main .contact-info {
+    background-color: rgba(82, 200, 255, 0.1);
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0rem 1rem;
+    margin: 4rem 0rem; }
+    main .contact-info h2 {
+      user-select: none;
+      margin-right: 1rem; }
   main .main-info {
     margin-bottom: 2rem;
     padding: 0.2rem;
