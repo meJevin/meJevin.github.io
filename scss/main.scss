@@ -325,12 +325,11 @@ span {
     h3 {
       text-align: left;
       a {
+        @include easeOut;
         padding: 0.5rem;
         background-color: darken($primary-color, 0.5);
         &:hover {
           background-color: darken($secondary-color, 0.5);
-
-          @include easeOut;
         }
       }
       span {

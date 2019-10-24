@@ -441,11 +441,11 @@ span.hover-for-bg {
     .about-info .job h3 {
       text-align: left; }
       .about-info .job h3 a {
+        transition: all 0.65s ease-in-out;
         padding: 0.5rem;
         background-color: #353d40; }
         .about-info .job h3 a:hover {
-          background-color: #4fc7ff;
-          transition: all 0.65s ease-in-out; }
+          background-color: #4fc7ff; }
       .about-info .job h3 span {
         color: #52c8ff;
         font-weight: 300;
