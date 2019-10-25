@@ -322,7 +322,7 @@ main {
       main .contact-info .contact-info-button i {
         transition: all 0.65s ease-in-out;
         color: white;
-        font-size: 1.2rem;
+        font-size: 0.95rem;
         margin: 0rem 1rem; }
         main .contact-info .contact-info-button i.show {
           transform: rotateZ(180deg); }
@@ -330,6 +330,7 @@ main {
         transition: all 0.65s ease-in-out;
         user-select: none;
         margin: 0 1rem;
+        margin-right: 0rem;
         color: white; }
       main .contact-info .contact-info-button.show {
         background-color: rgba(82, 200, 255, 0.35); }
