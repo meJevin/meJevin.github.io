@@ -59,11 +59,10 @@ $item-width: 200px;
         @include easeOut;
 
         position: absolute;
-        transform: scale(0);
 
         opacity: 0;
 
-        transform: scale(0.75);
+        transform: scale(0.7);
 
         bottom: 0;
         right: 0;
