@@ -354,8 +354,7 @@ main {
         opacity: 1; }
         main .contact-info .contacts.show i {
           margin: 0rem 0.5rem;
-          transform: scale(1);
-          filter: blur(0); }
+          transform: scale(1); }
         main .contact-info .contacts.show a {
           margin: 0rem 0.5rem; }
   main .main-info {
