@@ -111,7 +111,10 @@ main {
 
     .contact-info-button {
       @include easeOut;
-      background-color: rgba($secondary-color, 0.1);
+      //background-color: rgba($secondary-color, 0.1);
+
+      display: inline-flex;
+      align-items: center;
 
       cursor: pointer;
 
@@ -127,17 +130,11 @@ main {
           transform: rotateZ(180deg);
         }
       }
-
-      display: inline-flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-
       h2 {
         @include easeOut;
         user-select: none;
 
-        margin: 0 1rem;
+        //margin: 0 1rem;
 
         margin-right: 0rem;
 
@@ -145,7 +142,7 @@ main {
       }
 
       &.show {
-        background-color: rgba($secondary-color, 0.35);
+        //background-color: rgba($secondary-color, 0.35);
       }
 
       margin-bottom: 0.5rem;
