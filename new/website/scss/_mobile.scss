@@ -12,6 +12,7 @@
     .item {
       margin: 1rem 1rem;
     }
+
     grid-template-columns: repeat(auto-fit, $item-width);
     grid-column-gap: 3rem;
   }
@@ -40,6 +41,7 @@
     .item {
       margin: 1rem 1rem;
     }
+
     grid-template-columns: repeat(auto-fit, $item-width);
     grid-column-gap: 3rem;
   }
@@ -65,9 +67,11 @@
 
   .project-group-content {
     padding: 0rem 2rem;
+
     .item {
       margin: 1rem auto;
     }
+
     grid-template-columns: repeat(auto-fit, minmax($item-width, 1fr));
     grid-column-gap: 2rem;
   }
