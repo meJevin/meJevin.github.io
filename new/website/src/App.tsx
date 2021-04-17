@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Route, Switch, useLocation } from 'react-router';
 
 import { MenuItem } from './Components/Header';
@@ -15,12 +15,16 @@ const App: React.FC = () => {
 
   let location = useLocation();
 
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+
   useEffect(() => {
     if (document.location.hash === "#/") {
       document.body.id = "bg-img";
+      setIsOverlayVisible(false);
     }
     else {
       document.body.id = "bg-img-about";
+      setIsOverlayVisible(true);
     }
   });
 
@@ -39,8 +43,22 @@ const App: React.FC = () => {
     },
   ];
 
+  const renderOverlay = () => {
+    if (isOverlayVisible) {
+      return (
+        <div className="overlay">
+
+        </div>
+      );
+    }
+
+    return <Fragment/>
+  };
+
   return (
     <Fragment>
+      {renderOverlay()}
+
       <Header menuItems={headerMenuItems}/>
 
       <Switch>
