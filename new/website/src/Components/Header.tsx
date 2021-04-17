@@ -14,8 +14,6 @@ const Header: React.FC<Props> = (props) => {
     
     let location = useLocation();
 
-    console.log(location);
-
     let [currentHashRoute, setCurrentHashRoute] = useState("");
 
     currentHashRoute = document.location.hash.replace('#', '');
@@ -28,17 +26,9 @@ const Header: React.FC<Props> = (props) => {
     const [menuBrandingClass, setMenuBrandingClass] = useState("menu-branding");
     const [navItemClass, setNavItemClass] = useState("nav-item");
 
-    console.log("Initial render!");
-
-    useEffect(() => {
-        console.log("Use effect!");
-    });
-
-
     const menuButtonClicked = () => {
         if (isMenuOpen) {
             // Hide it
-
             setIsMenuOpen(false);
             setMenuButtonClass("menu-btn close");
             setMenuNavClass("menu-nav show");
@@ -48,7 +38,6 @@ const Header: React.FC<Props> = (props) => {
         }
         else {
             // Show it
-
             setIsMenuOpen(true);
             setMenuButtonClass("menu-btn");
             setMenuNavClass("menu-nav");

@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router';
 import { MenuItem } from './Components/Header';
 
 import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 import HomePage from './Pages/HomePage';
 import AboutPage from './Pages/AboutPage';
@@ -48,6 +49,8 @@ const App: React.FC = () => {
           <NotFoundPage/>
         </Route>
       </Switch>
+
+      <Footer/>
     </Fragment>
   );
 }
