@@ -63,7 +63,7 @@ const AboutPage: React.FC<Props> = (props) => {
                     <span className="highlight">Dart</span>,&nbsp;
                     <span className="highlight">HTML</span>,&nbsp;
                     <span className="highlight">CSS</span>,&nbsp;
-                    <span className="highlight">JavaScript</span>, a little bit of&nbsp;
+                    <span className="highlight">JavaScript</span>, a little bit of
                     low-level <span className="highlight">C</span> and a touch of&nbsp;
                     <span className="highlight">Delphi</span> here and there in the past.
                     <br /><br />
@@ -72,13 +72,15 @@ const AboutPage: React.FC<Props> = (props) => {
                     <span className="highlight">.NET</span>,&nbsp;
                     <span className="highlight">Qt</span>,&nbsp;
                     <span className="highlight">Lazarus</span>,&nbsp;
-                    different implementations of <span className="highlight">SQL</span>,&nbsp;
+                    <span className="highlight">SQL</span>,&nbsp;
                     <span className="highlight">WPF</span>,&nbsp;
                     <span className="highlight">WinForms</span>,&nbsp;
                     <span className="highlight">Visual Studio</span>,&nbsp;
                     <span className="highlight">WinAPI</span>,&nbsp;
                     <span className="highlight">Xcode</span>,&nbsp;
                     <span className="highlight">SCSS</span>,&nbsp;
+                    <span className="highlight">Xamarin Forms</span>,&nbsp;
+                    <span className="highlight">ASP.NET</span>,&nbsp;
                     <span className="highlight">git</span>, and many-many more.
                     <br /><br />
                 </div>
@@ -120,7 +122,7 @@ const AboutPage: React.FC<Props> = (props) => {
                 <p>
                 Right now I'm a Software Developer at Synteco. Working with medical
                 analyzers, I've delt with&nbsp;
-                <span className="highlight">OpenCV</span> (<span className="highlight">EmguCV</span>
+                <span className="highlight">OpenCV</span> (<span className="highlight">EmguCV</span>&nbsp;
                 on <span className="highlight">C#</span>) while developing my own&nbsp;
                 <span className="highlight">computer vision</span> algorithms (and
                 improving the old ones), <span className="highlight">MySQL</span>,&nbsp;
@@ -128,13 +130,13 @@ const AboutPage: React.FC<Props> = (props) => {
                 improve my analyzing algorithms by throwing all the collected info
                 about subjects into a <span className="highlight">nerual-net</span>,
                 Accord.Video.DirectShow for interactions with&nbsp;
-                <span className="highlight">video-cameras</span>,
+                <span className="highlight">video-cameras</span>,&nbsp;
                 <span className="highlight">WPF</span> and a lot of other stuff!
                 </p>
             </div>
             <div className="job job-2">
                 <h3>
-                <a href="https://code-className.ru/" target="_blank">Code class</a>
+                <a href="https://code-className.ru/" target="_blank">Code Class</a>
                 <span>2017-2018</span>
                 </h3>
                 <h6>Programming teacher</h6>
