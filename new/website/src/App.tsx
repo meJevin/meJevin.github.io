@@ -17,6 +17,8 @@ const App: React.FC = () => {
 
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
 
+  const [isShowingEasterEgg, setIsShowingEasterEgg] = useState(false);
+
   useEffect(() => {
     if (document.location.hash === "#/") {
       document.body.id = "bg-img";
@@ -43,10 +45,24 @@ const App: React.FC = () => {
     },
   ];
 
+  const handleEasterEggMouseOver = () => {
+    setIsShowingEasterEgg(true);
+  };
+
+  const handleEasterEggMouseLeave = () => {
+    setIsShowingEasterEgg(false);
+  };
+
   const renderOverlay = () => {
+    let overlayClass = "overlay";
+
+    if (isShowingEasterEgg) {
+      overlayClass += " hide";
+    }
+
     if (isOverlayVisible) {
       return (
-        <div className="overlay">
+        <div className={overlayClass}>
 
         </div>
       );
@@ -67,7 +83,9 @@ const App: React.FC = () => {
         </Route>
 
         <Route exact path="/about">
-          <AboutPage/>
+          <AboutPage 
+            easterEggMouseOver={handleEasterEggMouseOver} 
+            easterEggMouseLeave={handleEasterEggMouseLeave}/>
         </Route>
 
         <Route exact path="/work">
