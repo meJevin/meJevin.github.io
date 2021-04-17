@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { Route, Switch } from 'react-router';
+import React, { Fragment, useEffect } from 'react';
+import { Route, Switch, useLocation } from 'react-router';
 
 import { MenuItem } from './Components/Header';
 
@@ -12,7 +12,18 @@ import MyWorkPage from './Pages/MyWorkPage';
 import NotFoundPage from './Pages/NotFoundPage';
 
 const App: React.FC = () => {
-  
+
+  let location = useLocation();
+
+  useEffect(() => {
+    if (document.location.hash === "#/") {
+      document.body.id = "bg-img";
+    }
+    else {
+      document.body.id = "bg-img-about";
+    }
+  });
+
   const headerMenuItems: MenuItem[] = [
     {
       title: "Home",
