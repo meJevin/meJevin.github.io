@@ -1,4 +1,5 @@
 {
+  "homepage": "http://mejevin.github.io/",
   "name": "website",
   "version": "0.1.0",
   "private": true,
@@ -11,6 +12,7 @@
     "@types/react": "^16.14.2",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.7",
+    "gh-pages": "^3.1.0",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -24,7 +26,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass-watch": "node-sass -w scss/ -o src/css/ --recursive"
+    "sass-watch": "node-sass -w scss/ -o src/css/ --recursive",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
