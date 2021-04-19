@@ -10,7 +10,7 @@ const HomePage: React.FC = () => {
 
     useEffect(() => {
         document.title = "M. Naifield";
-    });
+    }, []);
 
     const handleContactsClick = () => {
         if (isShowingContacts) {
