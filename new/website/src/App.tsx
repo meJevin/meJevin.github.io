@@ -28,7 +28,7 @@ const App: React.FC = () => {
       document.body.id = "bg-img-about";
       setIsOverlayVisible(true);
     }
-  });
+  }, []);
 
   const headerMenuItems: MenuItem[] = [
     {
