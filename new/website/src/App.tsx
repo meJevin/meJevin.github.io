@@ -20,15 +20,15 @@ const App: React.FC = () => {
   const [isShowingEasterEgg, setIsShowingEasterEgg] = useState(false);
 
   useEffect(() => {
-    if (document.location.hash === "#/") {
-      document.body.id = "bg-img";
-      setIsOverlayVisible(false);
-    }
-    else {
+    if (document.location.hash === "#/about") {
       document.body.id = "bg-img-about";
       setIsOverlayVisible(true);
     }
-  }, []);
+    else {
+      document.body.id = "bg-img";
+      setIsOverlayVisible(false);
+    }
+  });
 
   const headerMenuItems: MenuItem[] = [
     {
