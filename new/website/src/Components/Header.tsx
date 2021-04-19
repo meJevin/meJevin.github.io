@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Link, RouteComponentProps, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export interface MenuItem {
     title: string;
