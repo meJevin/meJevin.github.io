@@ -53,6 +53,7 @@ h3 {
   font-weight: 300;
 
   padding: 0;
+
   &.lg-heading {
     font-size: 6rem;
   }
@@ -130,6 +131,7 @@ main {
           transform: rotateZ(180deg);
         }
       }
+
       h2 {
         @include easeOut;
         user-select: none;
@@ -282,21 +284,23 @@ span {
       .bio-1 {
         grid-area: bio-1;
       }
+
       .bio-2 {
         grid-area: bio-2;
       }
+
       .bio-3 {
         grid-area: bio-3;
       }
+
       .bio-4 {
         grid-area: bio-4;
       }
 
-      grid-template-areas:
-        "bio-1"
-        "bio-2"
-        "bio-3"
-        "bio-4";
+      grid-template-areas: "bio-1"
+      "bio-2"
+      "bio-3"
+      "bio-4";
     }
   }
 
@@ -328,6 +332,7 @@ span {
         @include easeOut;
         padding: 0.5rem;
         background-color: darken($primary-color, 0.5);
+
         &:hover {
           background-color: darken($secondary-color, 0.5);
         }

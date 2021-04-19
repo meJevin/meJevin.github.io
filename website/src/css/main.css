@@ -388,7 +388,7 @@ span.hover-for-bg {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: "bioimage bioimage bio bio" "job1 job2 bio bio";
+  grid-template-areas: "bioimage bioimage bio bio" "job1 job2 bio bio";
   grid-template-columns: repeat(4, 1fr); }
   .about-info .bio-image {
     background: url(../img/portrait_2.jpg);
@@ -409,7 +409,7 @@ span.hover-for-bg {
       height: 100%;
       display: grid;
       grid-template-rows: repeat(auto-fit, 1fr);
-      grid-template-areas: "bio-1" "bio-2" "bio-3" "bio-4"; }
+      grid-template-areas: "bio-1" "bio-2" "bio-3" "bio-4"; }
       .about-info .bio .bio-info .bio-1 {
         grid-area: bio-1; }
       .about-info .bio .bio-info .bio-2 {
@@ -481,7 +481,7 @@ span.hover-for-bg {
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .about-info {
-    grid-template-areas: "bioimage bio bio bio" "job1 bio bio bio" "job2 bio bio bio";
+    grid-template-areas: "bioimage bio bio bio" "job1 bio bio bio" "job2 bio bio bio";
     grid-template-columns: 4fr; }
   main {
     padding: 4rem 3rem; }
@@ -524,7 +524,7 @@ span.hover-for-bg {
       height: 150px;
       background-size: cover; }
   .about-info {
-    grid-template-areas: "bioimage" "bio" "job1" "job2";
+    grid-template-areas: "bioimage" "bio" "job1" "job2";
     grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 500px) {
