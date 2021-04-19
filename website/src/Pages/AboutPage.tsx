@@ -28,8 +28,7 @@ const AboutPage: React.FC<Props> = (props) => {
     return (
         <main id="about" className={mainClass}>
             <h1 className="lg-heading">
-            About&nbsp;
-            <span className="text-secondary">Me</span>
+            About <span className="text-secondary">Me</span>
             </h1>
     
             <h2 className="sm-heading">

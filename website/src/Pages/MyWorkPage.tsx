@@ -58,8 +58,7 @@ const MyWorkPage: React.FC = () => {
     return (
         <main id="work">
             <h1 className="lg-heading">
-                My&nbsp;
-                <span className="text-secondary">Work</span>
+                My <span className="text-secondary">Work</span>
             </h1>
 
             <h2 className="sm-heading">

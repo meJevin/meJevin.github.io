@@ -30,8 +30,7 @@ const HomePage: React.FC = () => {
     return (
         <main id="home">
             <h1 className="lg-heading">
-                Michael&nbsp;
-                <span className="text-secondary">Naifield</span>
+                Michael <span className="text-secondary">Naifield</span>
             </h1>
 
             <h2 className="sm-heading">
