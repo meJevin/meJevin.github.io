@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
 
     useEffect(() => {
         setCurrentYear(new Date().getFullYear());
-    });
+    }, []);
 
     return (
         <footer id="main-footer">
