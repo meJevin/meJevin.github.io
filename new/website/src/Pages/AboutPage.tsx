@@ -11,7 +11,7 @@ const AboutPage: React.FC<Props> = (props) => {
 
     useEffect(() => {
         document.title = "About me";
-    });
+    }, []);
 
     const handleEasterEggMouseOver = () => {
         setMainClass("hide");
