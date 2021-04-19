@@ -532,7 +532,8 @@ span.hover-for-bg {
     padding: 1.5rem; }
     main .lg-heading {
       font-size: 4rem;
-      margin-bottom: 4rem; }
+      margin-bottom: 4rem;
+      margin-top: 4rem; }
   main#home h1 {
     margin-top: 10vh; }
   .about-info .bio-image {
