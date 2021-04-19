@@ -42,73 +42,54 @@ const AboutPage: React.FC<Props> = (props) => {
                 <h2 className="text-secondary">BIO & Job Experience</h2>
     
                 <div className="bio-info">
-                <div className="bio-1">
-                    <br />
-                    My name is <span className="highlight">Michael</span> and I'm a young
-                    software developer from <span className="highlight">Russia</span>.
-                    <br /><br />
-                    I'm only in the beginning of my programming carrier, but already
-                    have a strong knowledge base of programming lanuages, frameworks,
-                    APIs & general computer architecture on different levels; starting
-                    from CPU registers and finishing with high-level software
-                    abstractions.
-                    <br /><br />
-                </div>
-    
-                <div className="bio-2">
-                    I've worked with&nbsp;
-                    <span className="highlight">C++</span>,&nbsp;
-                    <span className="highlight">C#</span>,&nbsp;
-                    <span className="highlight">Dart</span>,&nbsp;
-                    <span className="highlight">HTML</span>,&nbsp;
-                    <span className="highlight">CSS</span>,&nbsp;
-                    <span className="highlight">JavaScript</span>, a little bit of
-                    low-level <span className="highlight">C</span> and a touch of&nbsp;
-                    <span className="highlight">Delphi</span> here and there in the past.
-                    <br /><br />
-                    Among the tools I've used are:&nbsp;
-                    <span className="highlight">Unity3D</span>,&nbsp;
-                    <span className="highlight">.NET</span>,&nbsp;
-                    <span className="highlight">Qt</span>,&nbsp;
-                    <span className="highlight">Lazarus</span>,&nbsp;
-                    <span className="highlight">SQL</span>,&nbsp;
-                    <span className="highlight">WPF</span>,&nbsp;
-                    <span className="highlight">WinForms</span>,&nbsp;
-                    <span className="highlight">Visual Studio</span>,&nbsp;
-                    <span className="highlight">WinAPI</span>,&nbsp;
-                    <span className="highlight">Xcode</span>,&nbsp;
-                    <span className="highlight">SCSS</span>,&nbsp;
-                    <span className="highlight">Xamarin Forms</span>,&nbsp;
-                    <span className="highlight">ASP.NET</span>,&nbsp;
-                    <span className="highlight">git</span>, and many-many more.
-                    <br /><br />
-                </div>
-    
-                <div className="bio-3">
-                    I'm extremly enthusiastic to any kind of programming experience,
-                    because I truly enjoy what I do. Whether it be a web-site, mobile
-                    app, desktop app, a simple CLI tool or anything of that sort. That
-                    is why I'm open to any offers you throw at me. And being a
-                    dedicated, hard-working person that I am, I usually yield great
-                    results. I always try to stay on the bleeding edge of the modern
-                    programming world, learning new things, improving my knowledge in
-                    areas that I already know.
-                    <br /><br />
-                </div>
-    
-                <div className="bio-4">
-                    Outside of programming I'm your average&nbsp;
-                    <span className="highlight-wow">white-haired elf-looking guy</span>.
-                    Actually, that's&nbsp;
-                    <span className="hover-for-bg" id="hover-for-bg-item" onMouseOver={handleEasterEggMouseOver} onMouseLeave={handleEasterEggMouseLeave}>me</span> in the
-                    background. I really endore certain areas of&nbsp;
-                    <span className="highlight">mathematics</span> &&nbsp;
-                    <span className="highlight">physics</span>. <br/><br/> I enjoy editing videos adding varoious
-                    special FX via <span className="highlight">Adobe After Effects</span> in my spare time.
-                    I also play <span className="highlight">basketball</span> and <span className="highlight">skateboard</span> a lot and
-                    I'm an amature <span className="highlight">photographer</span>
-                    <br/>
-                </div>
+                    <div className="bio-1">
+                        <br />
+                        My name is <span className="highlight">Michael</span> and I'm a young
+                        software developer from <span className="highlight">Russia</span>.
+                        <br /><br />
+                        I'm only in the beginning of my programming carrier, but already
+                        have a strong knowledge base of programming lanuages, frameworks,
+                        APIs & general computer architecture on different levels; starting
+                        from CPU registers and finishing with high-level software
+                        abstractions.
+                        <br /><br />
+                    </div>
+        
+                    <div className="bio-2">
+                        I've worked with <span className="highlight">C++ C#, Dart, HTML, CSS, JavaScript, TypeScript, C, Delphi</span>,
+                        <br /><br />
+                        Among the tools I've used are: <span className="highlight">Unity3D, .NET, Lazarus, SQL, WPF, WinForms, Visual Studio, Postman, WinAPI, XCode, SCSS, Xamarin Forms, ASP.NET, git</span>, and many-many more.
+                        <br /><br />
+                    </div>
+        
+                    <div className="bio-3">
+                        I'm extremly enthusiastic to any kind of programming experience,
+                        because I truly enjoy what I do. Whether it be a web-site, mobile
+                        app, desktop app, a simple CLI tool or anything of that sort. That
+                        is why I'm open to any offers you throw at me. And being a
+                        dedicated, hard-working person that I am, I usually yield great
+                        results. I always try to stay on the bleeding edge of the modern
+                        programming world, learning new things, improving my knowledge in
+                        areas that I already know.
+                        <br /><br />
+                    </div>
+        
+                    <div className="bio-4">
+                        Outside of programming I'm your average&nbsp;
+                        <span className="highlight-wow">white-haired elf-looking guy</span>.
+                        Actually, that's&nbsp;
+                        <span className="hover-for-bg" id="hover-for-bg-item" onMouseOver={handleEasterEggMouseOver} onMouseLeave={handleEasterEggMouseLeave}>me</span> in the
+                        background. I really endore certain areas of&nbsp;
+                        <span className="highlight">mathematics</span> &&nbsp;
+                        <span className="highlight">physics</span>. <br/><br/> I enjoy editing videos adding varoious
+                        special FX via <span className="highlight">Adobe After Effects</span> in my spare time.
+                        I also play <span className="highlight">basketball</span> and <span className="highlight">skateboard</span> a lot and
+                        I'm an amature <span className="highlight">photographer</span>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                    </div>
                 </div>
             </div>
     
