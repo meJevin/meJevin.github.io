@@ -27,6 +27,10 @@ const Header: React.FC<Props> = (props) => {
     const [navItemClass, setNavItemClass] = useState("nav-item");
 
     const menuButtonClicked = () => {
+        toggleMenu();;
+    };
+
+    const toggleMenu = () => {
         if (isMenuOpen) {
             // Hide it
             setIsMenuOpen(false);
@@ -49,6 +53,7 @@ const Header: React.FC<Props> = (props) => {
     
     const handleMenuItemClick = (newRoute: string) => {
         setCurrentHashRoute(newRoute);
+        toggleMenu();
     };
 
     return (
