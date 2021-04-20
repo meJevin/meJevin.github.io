@@ -46,14 +46,6 @@ export const getProjects = async (): Promise<ProjectModel[]> => {
 
    result.push({
       categoryName: 'C#',
-      projectName: 'Lounge Radio',
-      description: 'An application that streams radio station audio via HTTP. Works on iOS and Anroid via Xamarin.Forms',
-      projectLink: 'https://github.com/meJevin/LRadio',
-      tags: ["C#", "Mobile", "iOS", "Anroid", "Xamarin.Forms"]
-   });
-
-   result.push({
-      categoryName: 'C#',
       projectName: 'Philter',
       description: 'App that help promote some business related to cannabis. It was made with Unity3D for iOS and Anroid and has a really complex and buitiful UI',
       projectLink: 'https://github.com/meJevin/Philter',
