@@ -519,7 +519,7 @@ span.hover-for-bg {
   .menu-branding {
     height: 25vh; }
     .menu-branding .portrait {
-      background: url(../img/portrait_small.jpg);
+      background: url(../img/portrait.jpg);
       width: 150px;
       height: 150px;
       background-size: cover; }
